@@ -1,11 +1,70 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Badge from '../components/Badge.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import BriefcaseIcon from '../components/icons/Briefcase.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Experience from '../components/Experience.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Edenilson Molina - Desarrollador Full Stack"
+	description="Desarrollador Full Stack con más de 5 años de experiencia creando aplicaciones web"
+>
+	<main class="mx-5 md:mx-7 2xl:mx-30">
+		<section class="pt-32">
+			<img 
+				class="rounded-full w-16 h-16 object-cover bg-white mb-4" 
+				src="/logo.png" 
+				alt="Logo"  
+			/>
+			<h1 class="flex text-3xl sm:text-5xl font-bold gap-x-4 pb-4">
+				¡Hola!, soy Edenilson Molina 
+				<a 
+					href="https://www.linkedin.com/in/elmer-edenilson-rosales-molina-099bab367/" 
+					class="flex items-center"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Badge>Disponible</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl">
+                <span class="text-yellow-200">Desarrollador Full Stack</span> <span class="opacity-80">con más de</span> <span class="text-blue-200">5 años de experiencia</span> <span class="opacity-80">creando aplicaciones web modernas, escalables y orientadas a producto.</span>
+            </h2>
+			<p class="mt-2 text-sm text-gray-600 flex items-center gap-2">
+				<span aria-hidden="true">📍</span>
+				<span>Cuscatlán, El Salvador — Abierto a trabajo remoto</span>
+			</p>
+			<ul class="flex flex-row gap-x-4 mt-4">
+				<li>
+					<SocialPill href="https://www.linkedin.com/in/elmer-edenilson-rosales-molina-099bab367/">
+						<LinkedInIcon class="size-6" />
+						LinkedIn
+					</SocialPill>
+				</li>
+				<li>
+					<SocialPill href="https://github.com/edenilson-molina">
+						<GitHubIcon class="size-6" />
+						GitHub
+					</SocialPill>
+				</li>
+				<li>
+					<SocialPill href="mailto:edenilsonmolina2001@hotmail.com">
+						<MailIcon class="size-6" />
+						Correo
+					</SocialPill>
+				</li>
+			</ul>
+		</section>
+		<section id="experience" class="pt-20">
+			<h1 class="flex gap-x-2 items-center text-2xl font-semibold mb-6">
+				<BriefcaseIcon class="size-8" />
+				Experiencia Laboral
+			</h1>
+			<Experience />
+		</section>
+	</main>
 </Layout>

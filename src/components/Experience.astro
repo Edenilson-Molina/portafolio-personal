@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    title: "Sistema de Recursos Humanos - Secretaría de Innovación",
+    date: "Actualmente",
+    description: "Colaboro en su desarrollo, implementando nuevas funcionalidades y mejorando la experiencia del usuario. Me dedico a crear interfaces intuitivas y eficientes para optimizar la gestión de recursos humanos.",
+    
+  },
+  {
+    title: "SmartCity Minecraft - Secretaría de Innovación",
+    date: "Julio 2025 - Agosto 2025",
+    description: "Trabajé desde el frontend sobre la actualización del sistema para una personalización avanzada sobre el evento de Minecraft lanzado por el gobierno de El Salvador.",
+   
+  },
+  {
+    title: "Sitio Oficial de la SIP - Secretaría de Innovación",
+    date: "Enero 2025 - Marzo 2025",
+    description: "Colaboré en el desarrollo del nuevo sitio oficial de la Secretaría de Innovación, utilizando tecnologías web modernas.",
+  },
+  {
+    title: "Sistemas internos - Ministerio de Economía",
+    date: "Marzo 2024 - Junio 2024",
+    description: "Participé en el desarrollo de dos módulos clave para los sistemas internos del Ministerio de Economía, mejorando la eficiencia y funcionalidad de las aplicaciones existentes.",
+  },
+];
+
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+        EXPERIENCE.map((item) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...item} />
+            </li>
+        ))
+    }
+</ol>
