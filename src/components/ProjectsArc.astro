@@ -1,0 +1,310 @@
+---
+// ProjectsArc.astro: Radial Arc & Orbital Project Dial inspired by Fractal Matter
+const projects = [
+  {
+    id: "01",
+    tag: "2026 // RAG QA & Embeddings",
+    title: "Sistema RAG para Automatización Documental y Normativa",
+    shortTitle: "RAG Documental",
+    category: "Recuperación Densa",
+    description: "Pipeline integral de recuperación semántica densa y QA contextual para repositorios normativos extensos. Indexación sub-segundo con FAISS y re-ranking neuronal sin alucinaciones.",
+    metricLabel: "Recall@10 Optimization",
+    metricValue: "+50% (40% → 60%)",
+    metricProgress: "60%",
+    speed: "0.08s vector lookup",
+    secondaryMetric: "Inferencia 95% + veloz",
+    tech: ["Python", "FAISS", "BETO", "Sentence Transformers", "MPNet"],
+    icon: "dataset",
+    github: "https://github.com/Edenilson-Molina",
+    glowColor: "from-rose-500/30 to-purple-500/20",
+    accentBorder: "border-rose-400/40",
+    badgeBg: "bg-rose-500/10 text-rose-300 border-rose-500/20"
+  },
+  {
+    id: "02",
+    tag: "2026 // Edge AI & Vision",
+    title: "DoctorMaiz: Diagnóstico Agrícola con Edge AI Local",
+    shortTitle: "DoctorMaiz Edge",
+    category: "Visión Offline",
+    description: "Sistema de visión computacional local e instantáneo para clasificación de 9 clases fitopatológicas en maíz. Opera 100% offline para agricultores mediante cuantización INT8 móvil.",
+    metricLabel: "Macro-F1 Score & OOD",
+    metricValue: "0.94 F1",
+    metricProgress: "94%",
+    speed: "60ms en móvil",
+    secondaryMetric: "Peso binario: 3.5 MB",
+    tech: ["TensorFlow Lite", "INT8 Quant", "EfficientNet-Lite0", "React Native"],
+    icon: "network_intelligence",
+    github: "https://github.com/Edenilson-Molina",
+    glowColor: "from-cyan-500/30 to-blue-500/20",
+    accentBorder: "border-cyan-400/40",
+    badgeBg: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20"
+  },
+  {
+    id: "03",
+    tag: "2026 // MINSAL Data Science",
+    title: "Modelado Predictivo de Salud y Factores Estudiantiles",
+    shortTitle: "Salud Predictiva",
+    category: "Machine Learning",
+    description: "Pipeline de procesamiento analítico sobre 1,915 registros y 104 variables de salud epidemiológica juvenil, implementando validaciones cruzadas estrictas libres de data leakage.",
+    metricLabel: "Curva ROC-AUC",
+    metricValue: "0.95 AUC",
+    metricProgress: "95%",
+    speed: "104 Variables Analizadas",
+    secondaryMetric: "Validación Zero Leakage",
+    tech: ["Python", "Scikit-Learn", "XGBoost", "Pandas", "GSHS Dataset"],
+    icon: "analytics",
+    github: "https://github.com/Edenilson-Molina",
+    glowColor: "from-emerald-500/30 to-teal-500/20",
+    accentBorder: "border-emerald-400/40",
+    badgeBg: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20"
+  }
+];
+---
+
+<section class="w-full flex flex-col gap-8 relative overflow-hidden" id="proyectos">
+  <!-- Section Title & Header -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <div class="flex flex-col gap-1.5">
+      <div class="flex items-center gap-2">
+        <span class="font-mono text-xs uppercase tracking-widest text-primary-fixed-dim font-medium">
+          01 // Portafolio de Ingeniería
+        </span>
+        <div class="h-px w-10 bg-white/20"></div>
+      </div>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+        Proyectos de Inteligencia Artificial
+      </h2>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-xs text-neutral-400 font-mono hidden sm:inline-block">Dial Orbital &bull; Selector 3D</span>
+      <!-- Navigation controls -->
+      <div class="flex items-center gap-1.5 bg-white/[0.04] p-1 rounded-full border border-white/[0.08]">
+        <button 
+          id="prevProjectBtn" 
+          class="w-8 h-8 rounded-full bg-white/[0.05] hover:bg-white/[0.15] text-white flex items-center justify-center transition-all cursor-pointer"
+          aria-label="Proyecto anterior"
+        >
+          <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+        </button>
+        <button 
+          id="nextProjectBtn" 
+          class="w-8 h-8 rounded-full bg-white text-neutral-900 hover:bg-neutral-200 flex items-center justify-center transition-all shadow-md cursor-pointer"
+          aria-label="Siguiente proyecto"
+        >
+          <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Radial Arc Showcase Container -->
+  <div class="relative w-full rounded-3xl bg-[#11131c]/80 backdrop-blur-2xl border border-white/[0.09] shadow-2xl p-6 sm:p-10 overflow-hidden min-h-[520px] flex items-center">
+    <!-- Ambient Background Radial Glow -->
+    <div class="absolute -right-20 -top-20 w-[450px] h-[450px] rounded-full bg-gradient-to-bl from-purple-600/15 via-cyan-500/10 to-transparent blur-3xl pointer-events-none"></div>
+
+    <!-- SVG Orbital Arc Track lines (Mathematical rings inspired by the image) -->
+    <div class="absolute right-0 top-0 bottom-0 w-full lg:w-3/5 pointer-events-none opacity-40 overflow-hidden flex items-center justify-end">
+      <svg class="w-[850px] h-[850px] -mr-48 transform rotate-12" viewBox="0 0 800 800" fill="none">
+        <circle cx="400" cy="400" r="380" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-dasharray="6 6"/>
+        <circle cx="400" cy="400" r="300" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+        <circle cx="400" cy="400" r="220" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <!-- Layout: Left Showcase Card & Right Curved Orbit Dial -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full z-10">
+      
+      <!-- Left Column: Active Project Details (7 cols) -->
+      <div class="lg:col-span-7 flex flex-col gap-5">
+        {projects.map((proj, idx) => (
+          <div 
+            class={`project-panel flex flex-col gap-5 transition-all duration-500 ease-out ${idx === 0 ? 'block opacity-100 translate-x-0' : 'hidden opacity-0 -translate-x-4'}`}
+            data-index={idx}
+          >
+            <!-- Badge & Category -->
+            <div class="flex items-center justify-between gap-3 flex-wrap">
+              <span class={`font-mono text-xs px-3 py-1 rounded-full border ${proj.badgeBg}`}>
+                {proj.tag}
+              </span>
+              <span class="font-mono text-xs text-neutral-400">
+                Fase {proj.id} // {proj.category}
+              </span>
+            </div>
+
+            <!-- Title -->
+            <h3 class="font-display text-2xl sm:text-3xl font-bold text-white leading-tight">
+              {proj.title}
+            </h3>
+
+            <!-- Tech Pills -->
+            <div class="flex flex-wrap gap-1.5">
+              {proj.tech.map(t => (
+                <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.07]">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <!-- Abstract -->
+            <p class="text-sm text-neutral-300 leading-relaxed max-w-xl">
+              {proj.description}
+            </p>
+
+            <!-- Integrated Progress Metric Bar -->
+            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/[0.06] flex flex-col gap-2">
+              <div class="flex items-center justify-between text-xs font-mono">
+                <span class="text-neutral-400">{proj.metricLabel}</span>
+                <span class="text-white font-semibold">{proj.metricValue}</span>
+              </div>
+              <div class="w-full bg-white/[0.08] h-2 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-primary-container via-purple-400 to-cyan-400 h-full rounded-full transition-all duration-700" style={`width: ${proj.metricProgress}`}></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-neutral-400 pt-1">
+                <span>{proj.speed}</span>
+                <span class="text-emerald-400">&bull; {proj.secondaryMetric}</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3 pt-1">
+              <a 
+                href={proj.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="btn-tactile-white inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold tracking-wide"
+              >
+                <span>Inspeccionar Repositorio</span>
+                <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+              </a>
+              <a 
+                href="#contacto" 
+                class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-white text-xs font-medium border border-white/[0.1] transition-all"
+              >
+                <span>Consultar Implementación</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Right Column: Orbital Arc Dial with Curved Perspective Cards (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col items-center justify-center relative py-6">
+        <!-- Vertical Arc Dial List -->
+        <div class="flex flex-col gap-3.5 w-full max-w-sm perspective-1000" id="orbitalDial">
+          {projects.map((proj, idx) => (
+            <div 
+              class={`arc-tile group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border transition-all duration-300 cursor-pointer ${
+                idx === 0 
+                  ? 'bg-white/[0.10] border-white/30 shadow-[0_8px_30px_rgba(0,0,0,0.5)] translate-x-2 scale-[1.02]' 
+                  : 'bg-white/[0.03] border-white/[0.06] hover:bg-white/[0.07] hover:border-white/15'
+              }`}
+              data-index={idx}
+            >
+              <div class="flex items-center gap-3.5">
+                <!-- Step Number with Circular Dial Indicator -->
+                <div class={`arc-number w-10 h-10 rounded-xl flex items-center justify-center font-mono text-sm font-bold transition-all ${
+                  idx === 0 
+                    ? 'bg-white text-neutral-900 shadow-md' 
+                    : 'bg-white/[0.05] text-neutral-400 group-hover:text-white'
+                }`}>
+                  {proj.id}
+                </div>
+
+                <div class="flex flex-col">
+                  <span class="font-display text-sm font-semibold text-white group-hover:text-primary transition-colors">
+                    {proj.shortTitle}
+                  </span>
+                  <span class="font-mono text-[11px] text-neutral-400">
+                    {proj.category}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Preview Micro Icon & Selector Ring -->
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-[20px] text-neutral-400 group-hover:text-white transition-colors">
+                  {proj.icon}
+                </span>
+                <span class={`arc-dot w-2 h-2 rounded-full transition-all ${
+                  idx === 0 ? 'bg-emerald-400 scale-125' : 'bg-transparent'
+                }`}></span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Micro Instruction Hint -->
+        <div class="mt-4 flex items-center gap-2 text-neutral-500 font-mono text-[11px]">
+          <span class="material-symbols-outlined text-[14px]">touch_app</span>
+          <span>Haz clic en un sector para rotar el proyecto</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let activeIndex = 0;
+  const panels = document.querySelectorAll<HTMLElement>('.project-panel');
+  const tiles = document.querySelectorAll<HTMLElement>('.arc-tile');
+  const prevBtn = document.getElementById('prevProjectBtn');
+  const nextBtn = document.getElementById('nextProjectBtn');
+  const total = panels.length;
+
+  function setActiveProject(index: number) {
+    activeIndex = (index + total) % total;
+
+    // Update panels
+    panels.forEach((panel, i) => {
+      if (i === activeIndex) {
+        panel.classList.remove('hidden', 'opacity-0', '-translate-x-4');
+        panel.classList.add('block', 'opacity-100', 'translate-x-0');
+      } else {
+        panel.classList.add('hidden', 'opacity-0', '-translate-x-4');
+        panel.classList.remove('block', 'opacity-100', 'translate-x-0');
+      }
+    });
+
+    // Update arc tiles
+    tiles.forEach((tile, i) => {
+      const num = tile.querySelector('.arc-number');
+      const dot = tile.querySelector('.arc-dot');
+      if (i === activeIndex) {
+        tile.className = 'arc-tile group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border transition-all duration-300 cursor-pointer bg-white/[0.10] border-white/30 shadow-[0_8px_30px_rgba(0,0,0,0.5)] translate-x-2 scale-[1.02]';
+        if (num) {
+          num.className = 'arc-number w-10 h-10 rounded-xl flex items-center justify-center font-mono text-sm font-bold transition-all bg-white text-neutral-900 shadow-md';
+        }
+        if (dot) {
+          dot.className = 'arc-dot w-2 h-2 rounded-full transition-all bg-emerald-400 scale-125';
+        }
+      } else {
+        tile.className = 'arc-tile group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border transition-all duration-300 cursor-pointer bg-white/[0.03] border-white/[0.06] hover:bg-white/[0.07] hover:border-white/15';
+        if (num) {
+          num.className = 'arc-number w-10 h-10 rounded-xl flex items-center justify-center font-mono text-sm font-bold transition-all bg-white/[0.05] text-neutral-400 group-hover:text-white';
+        }
+        if (dot) {
+          dot.className = 'arc-dot w-2 h-2 rounded-full transition-all bg-transparent';
+        }
+      }
+    });
+  }
+
+  tiles.forEach((tile) => {
+    tile.addEventListener('click', () => {
+      const idx = parseInt(tile.getAttribute('data-index') || '0', 10);
+      setActiveProject(idx);
+    });
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      setActiveProject(activeIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      setActiveProject(activeIndex + 1);
+    });
+  }
+</script>

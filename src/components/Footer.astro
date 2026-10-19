@@ -1,0 +1,46 @@
+---
+// Footer.astro: Clean modern portfolio footer
+---
+
+<footer class="w-full bg-[#0b0c10]/95 backdrop-blur-xl border-t border-white/[0.06] py-12 shadow-[0_-4px_20px_rgba(0,0,0,0.3)]">
+  <div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin flex flex-col gap-8">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+      <div class="flex flex-col gap-1.5">
+        <span class="font-display text-lg font-semibold text-white">Elmer Edenilson Rosales Molina</span>
+        <p class="text-sm text-neutral-400 max-w-xl leading-relaxed">
+          Software Engineer especializado en Machine Learning, arquitecturas RAG, microservicios de alto rendimiento y pipelines de automatización cognitiva.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06]">
+          <span class="material-symbols-outlined text-emerald-400 text-[17px]">neurology</span>
+          <span class="font-mono text-xs text-neutral-300">Construido con Astro &amp; WebGL</span>
+        </div>
+        <a 
+          class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-white/[0.05] hover:bg-white/[0.1] text-white hover:text-white transition-all text-xs font-semibold uppercase tracking-wider border border-white/[0.08]" 
+          href="mailto:elmeredenilsonrosalesmolina@gmail.com"
+        >
+          <span class="material-symbols-outlined text-[15px]">alternate_email</span>
+          <span>Contactar</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="h-px w-full bg-white/[0.06]"></div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-6 text-neutral-400 text-xs font-medium tracking-wide">
+        <a class="hover:text-white transition-colors" href="#inicio">Inicio</a>
+        <a class="hover:text-white transition-colors" href="#proyectos">Proyectos</a>
+        <a class="hover:text-white transition-colors" href="#experiencia">Experiencia</a>
+        <a class="hover:text-white transition-colors" href="#habilidades">Habilidades</a>
+        <a class="hover:text-white transition-colors" href="#educacion">Educación</a>
+        <a class="hover:text-white transition-colors" href="#contacto">Contacto</a>
+      </div>
+      <span class="text-xs text-neutral-500 font-mono">
+        © 2026 Elmer Edenilson Rosales Molina. Todos los derechos reservados.
+      </span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,167 @@
+---
+// BackgroundShader.astro: Elegant Neural Constellation & Architectural Dot Matrix
+---
+
+<div class="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+  <!-- Subtle Architectural Engineering Dot Matrix with Smooth Radial Mask -->
+  <div 
+    class="absolute inset-0 opacity-[0.22]"
+    style="background-image: radial-gradient(rgba(255, 255, 255, 0.35) 1px, transparent 1px); background-size: 32px 32px; mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 40%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, #000 40%, transparent 100%);"
+  ></div>
+
+  <!-- Soft Upper Ambient Conic Aurora Glow (Ultra refined, non-intrusive) -->
+  <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-[radial-gradient(ellipse_at_center,_rgba(79,70,229,0.08)_0%,_rgba(14,165,233,0.04)_40%,_transparent_75%)] blur-3xl"></div>
+
+  <!-- Interactive Constellation & Neural Graph Canvas -->
+  <canvas id="neural-matrix-canvas" class="block w-full h-full opacity-65"></canvas>
+</div>
+
+<script>
+  (function () {
+    const canvas = document.getElementById('neural-matrix-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    function resize() {
+      if (!canvas) return;
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resize, { passive: true });
+
+    // Node particle system
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 35 : 75;
+    const maxDistance = isMobile ? 100 : 140;
+
+    interface Particle {
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      radius: number;
+      color: string;
+      alpha: number;
+      baseAlpha: number;
+    }
+
+    const particles: Particle[] = [];
+    const colors = [
+      '255, 255, 255',    // Pure starlight
+      '99, 179, 237',     // Soft cyber cyan
+      '167, 139, 250',    // Ethereal violet
+      '255, 115, 130'     // Soft coral accent
+    ];
+
+    for (let i = 0; i < particleCount; i++) {
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const baseAlpha = Math.random() * 0.45 + 0.15;
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        radius: Math.random() * 1.4 + 0.8,
+        color,
+        alpha: baseAlpha,
+        baseAlpha
+      });
+    }
+
+    let mouse = { x: -1000, y: -1000, maxDist: 180 };
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    }, { passive: true });
+
+    window.addEventListener('mouseleave', () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    }, { passive: true });
+
+    let animId: number;
+
+    function render() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < maxDistance) {
+            const lineAlpha = (1 - dist / maxDistance) * 0.14;
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(180, 200, 240, ${lineAlpha})`;
+            ctx.lineWidth = 0.75;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw mouse connections (Magnetic Neural Influence)
+      if (mouse.x > 0 && mouse.y > 0) {
+        for (let i = 0; i < particles.length; i++) {
+          const dx = mouse.x - particles[i].x;
+          const dy = mouse.y - particles[i].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.maxDist) {
+            const lineAlpha = (1 - dist / mouse.maxDist) * 0.28;
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(125, 211, 252, ${lineAlpha})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Update & Draw particles
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+
+        // Motion
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Bounce on boundaries
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
+
+        // Subtle pulsing
+        p.alpha = p.baseAlpha + Math.sin(Date.now() * 0.0015 + i) * 0.1;
+
+        // Draw particle node
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.color}, ${Math.max(0.1, p.alpha)})`;
+        ctx.shadowColor = `rgba(${p.color}, 0.5)`;
+        ctx.shadowBlur = 6;
+        ctx.fill();
+        ctx.shadowBlur = 0; // reset
+      }
+
+      animId = requestAnimationFrame(render);
+    }
+
+    animId = requestAnimationFrame(render);
+
+    document.addEventListener('astro:before-swap', () => {
+      cancelAnimationFrame(animId);
+    });
+  })();
+</script>

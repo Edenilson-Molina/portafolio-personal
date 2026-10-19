@@ -1,0 +1,61 @@
+---
+// KpiMetrics.astro: Cohesive KPI bento strip with balanced typography and glass cards
+---
+
+<div class="w-full grid grid-cols-2 md:grid-cols-4 gap-4">
+  <!-- Metric 1 -->
+  <div class="group flex flex-col justify-between p-5 rounded-2xl bg-[#13151f]/70 backdrop-blur-xl border border-white/[0.07] shadow-lg hover:border-white/[0.18] hover:-translate-y-0.5 transition-all">
+    <div class="flex items-center justify-between">
+      <span class="font-mono text-[11px] text-neutral-400 uppercase tracking-wider">Optimización RAG</span>
+      <span class="material-symbols-outlined text-neutral-400 group-hover:text-primary transition-colors text-[20px]">dataset</span>
+    </div>
+    <div class="my-3">
+      <span class="font-mono text-3xl font-bold text-white tracking-tight">95%</span>
+    </div>
+    <p class="text-xs text-neutral-400 leading-relaxed">
+      Reducción en inferencias exhaustivas mediante filtrado vectorial.
+    </p>
+  </div>
+
+  <!-- Metric 2 -->
+  <div class="group flex flex-col justify-between p-5 rounded-2xl bg-[#13151f]/70 backdrop-blur-xl border border-white/[0.07] shadow-lg hover:border-white/[0.18] hover:-translate-y-0.5 transition-all">
+    <div class="flex items-center justify-between">
+      <span class="font-mono text-[11px] text-neutral-400 uppercase tracking-wider">Edge AI Model</span>
+      <span class="material-symbols-outlined text-neutral-400 group-hover:text-secondary transition-colors text-[20px]">network_intelligence</span>
+    </div>
+    <div class="my-3">
+      <span class="font-mono text-3xl font-bold text-white tracking-tight">0.94</span>
+    </div>
+    <p class="text-xs text-neutral-400 leading-relaxed">
+      Macro-F1 en clasificación fitopatológica sobre EfficientNet.
+    </p>
+  </div>
+
+  <!-- Metric 3 -->
+  <div class="group flex flex-col justify-between p-5 rounded-2xl bg-[#13151f]/70 backdrop-blur-xl border border-white/[0.07] shadow-lg hover:border-white/[0.18] hover:-translate-y-0.5 transition-all">
+    <div class="flex items-center justify-between">
+      <span class="font-mono text-[11px] text-neutral-400 uppercase tracking-wider">Cuantización INT8</span>
+      <span class="material-symbols-outlined text-neutral-400 group-hover:text-emerald-400 transition-colors text-[20px]">compress</span>
+    </div>
+    <div class="my-3">
+      <span class="font-mono text-3xl font-bold text-white tracking-tight">72%</span>
+    </div>
+    <p class="text-xs text-neutral-400 leading-relaxed">
+      Reducción de huella binaria (3.5MB) con latencia móvil de 60ms.
+    </p>
+  </div>
+
+  <!-- Metric 4 -->
+  <div class="group flex flex-col justify-between p-5 rounded-2xl bg-[#13151f]/70 backdrop-blur-xl border border-white/[0.07] shadow-lg hover:border-white/[0.18] hover:-translate-y-0.5 transition-all">
+    <div class="flex items-center justify-between">
+      <span class="font-mono text-[11px] text-neutral-400 uppercase tracking-wider">Salud Predictiva</span>
+      <span class="material-symbols-outlined text-neutral-400 group-hover:text-primary transition-colors text-[20px]">analytics</span>
+    </div>
+    <div class="my-3">
+      <span class="font-mono text-3xl font-bold text-white tracking-tight">0.95</span>
+    </div>
+    <p class="text-xs text-neutral-400 leading-relaxed">
+      ROC-AUC en clasificadores XGBoost para factores estudiantiles.
+    </p>
+  </div>
+</div>

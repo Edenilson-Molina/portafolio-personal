@@ -1,0 +1,214 @@
+---
+// Projects.astro: Refined showcase of AI and Machine Learning systems
+---
+
+<section class="w-full flex flex-col gap-6" id="proyectos">
+  <!-- Section Header -->
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <div class="flex flex-col gap-1.5">
+      <div class="flex items-center gap-2">
+        <span class="font-mono text-xs uppercase tracking-widest text-primary-fixed-dim font-medium">
+          01 // Proyectos Destacados
+        </span>
+        <div class="h-px w-10 bg-white/20"></div>
+      </div>
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+        Proyectos de Inteligencia Artificial
+      </h2>
+    </div>
+    <span class="text-sm text-neutral-400 max-w-md leading-relaxed">
+      Sistemas en producción e investigación aplicada con benchmarks rigurosos, trazabilidad y optimización computacional.
+    </span>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+    <!-- PROJECT 1: RAG System -->
+    <div class="group flex flex-col justify-between rounded-2xl bg-[#13151f]/75 backdrop-blur-xl p-6 shadow-xl border border-white/[0.07] hover:border-white/[0.20] hover:-translate-y-1 transition-all">
+      <div class="flex flex-col gap-4">
+        <!-- Header Badges -->
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] text-neutral-300 font-mono text-xs border border-white/[0.08]">
+            2026 // RAG QA
+          </span>
+          <a 
+            aria-label="GitHub Repo" 
+            class="p-2 rounded-lg bg-white/[0.03] text-neutral-400 hover:text-white hover:bg-white/[0.08] transition-colors border border-white/[0.06]" 
+            href="https://github.com/Edenilson-Molina" 
+            rel="noopener noreferrer" 
+            target="_blank"
+            title="Ver código"
+          >
+            <span class="material-symbols-outlined text-[18px]">code</span>
+          </a>
+        </div>
+
+        <!-- Title -->
+        <h3 class="font-display text-lg font-semibold text-white group-hover:text-primary transition-colors leading-snug">
+          Sistema RAG para Automatización Documental y Normativa
+        </h3>
+
+        <!-- Tech Pills -->
+        <div class="flex flex-wrap gap-1.5">
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Python</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">FAISS</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Sentence Transformers</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">BETO</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">MPNet</span>
+        </div>
+
+        <!-- Description -->
+        <p class="text-sm text-neutral-300 leading-relaxed">
+          Pipeline integral de recuperación semántica densa y QA contextual para repositorios normativos extensos. Indexación sub-segundo en colecciones vectoriales complejas.
+        </p>
+
+        <!-- Metrics Callout (Integrated, natural) -->
+        <div class="pt-3 border-t border-white/[0.06] flex flex-col gap-2">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="text-neutral-400">Recall@10 Optimization</span>
+            <span class="text-emerald-400 font-semibold">+50% (40% → 60%)</span>
+          </div>
+          <div class="w-full bg-white/[0.06] h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-primary-container to-emerald-400 h-full w-[60%]"></div>
+          </div>
+          <span class="text-[11px] text-neutral-400">
+            Trazabilidad exhaustiva a nivel de documento, página y artículo sin alucinaciones.
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3 flex items-center justify-between text-neutral-400 font-mono text-xs border-t border-white/[0.06]">
+        <span class="flex items-center gap-1.5 text-neutral-300">
+          <span class="material-symbols-outlined text-[15px] text-emerald-400">check_circle</span> 
+          Inferencia 95% + veloz
+        </span>
+        <span class="text-neutral-400">0.08s vector lookup</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 2: DoctorMaiz Edge AI -->
+    <div class="group flex flex-col justify-between rounded-2xl bg-[#13151f]/75 backdrop-blur-xl p-6 shadow-xl border border-white/[0.07] hover:border-white/[0.20] hover:-translate-y-1 transition-all">
+      <div class="flex flex-col gap-4">
+        <!-- Header Badges -->
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] text-neutral-300 font-mono text-xs border border-white/[0.08]">
+            2026 // Edge AI
+          </span>
+          <a 
+            aria-label="GitHub Repo" 
+            class="p-2 rounded-lg bg-white/[0.03] text-neutral-400 hover:text-white hover:bg-white/[0.08] transition-colors border border-white/[0.06]" 
+            href="https://github.com/Edenilson-Molina" 
+            rel="noopener noreferrer" 
+            target="_blank"
+            title="Ver código"
+          >
+            <span class="material-symbols-outlined text-[18px]">code</span>
+          </a>
+        </div>
+
+        <!-- Title -->
+        <h3 class="font-display text-lg font-semibold text-white group-hover:text-secondary transition-colors leading-snug">
+          DoctorMaiz: Diagnóstico Agrícola con Edge AI Local
+        </h3>
+
+        <!-- Tech Pills -->
+        <div class="flex flex-wrap gap-1.5">
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">TensorFlow Lite</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">INT8 Quant</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">EfficientNet-Lite0</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">React Native</span>
+        </div>
+
+        <!-- Description -->
+        <p class="text-sm text-neutral-300 leading-relaxed">
+          Sistema de visión computacional local e instantáneo para clasificación de 9 clases fitopatológicas en maíz. Opera 100% offline para agricultores en zonas sin cobertura.
+        </p>
+
+        <!-- Metrics Callout (Integrated, natural) -->
+        <div class="pt-3 border-t border-white/[0.06] flex flex-col gap-2">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="text-neutral-400">Macro-F1 Score &amp; OOD</span>
+            <span class="text-secondary font-semibold">0.94 F1</span>
+          </div>
+          <div class="w-full bg-white/[0.06] h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-secondary-container to-emerald-400 h-full w-[94%]"></div>
+          </div>
+          <span class="text-[11px] text-neutral-400">
+            Detector fuera de dominio (OOD) basado en distancia Mahalanobis + PCA.
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3 flex items-center justify-between text-neutral-400 font-mono text-xs border-t border-white/[0.06]">
+        <span class="flex items-center gap-1.5 text-neutral-300">
+          <span class="material-symbols-outlined text-[15px] text-secondary">bolt</span> 
+          60ms en móvil
+        </span>
+        <span class="text-neutral-400">Peso: 3.5 MB</span>
+      </div>
+    </div>
+
+    <!-- PROJECT 3: MINSAL Health Predictive Modeling -->
+    <div class="group flex flex-col justify-between rounded-2xl bg-[#13151f]/75 backdrop-blur-xl p-6 shadow-xl border border-white/[0.07] hover:border-white/[0.20] hover:-translate-y-1 transition-all">
+      <div class="flex flex-col gap-4">
+        <!-- Header Badges -->
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-1 rounded-md bg-white/[0.04] text-neutral-300 font-mono text-xs border border-white/[0.08]">
+            2026 // MINSAL Data
+          </span>
+          <a 
+            aria-label="GitHub Repo" 
+            class="p-2 rounded-lg bg-white/[0.03] text-neutral-400 hover:text-white hover:bg-white/[0.08] transition-colors border border-white/[0.06]" 
+            href="https://github.com/Edenilson-Molina" 
+            rel="noopener noreferrer" 
+            target="_blank"
+            title="Ver código"
+          >
+            <span class="material-symbols-outlined text-[18px]">code</span>
+          </a>
+        </div>
+
+        <!-- Title -->
+        <h3 class="font-display text-lg font-semibold text-white group-hover:text-primary transition-colors leading-snug">
+          Modelado Predictivo de Salud y Factores Estudiantiles
+        </h3>
+
+        <!-- Tech Pills -->
+        <div class="flex flex-wrap gap-1.5">
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Python</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Scikit-Learn</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">XGBoost</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Pandas</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">GSHS Dataset</span>
+        </div>
+
+        <!-- Description -->
+        <p class="text-sm text-neutral-300 leading-relaxed">
+          Pipeline de procesamiento analítico sobre 1,915 registros y 104 variables de salud epidemiológica juvenil, implementando validaciones cruzadas estrictas libres de data leakage.
+        </p>
+
+        <!-- Metrics Callout (Integrated, natural) -->
+        <div class="pt-3 border-t border-white/[0.06] flex flex-col gap-2">
+          <div class="flex items-center justify-between text-xs font-mono">
+            <span class="text-neutral-400">Curva ROC-AUC</span>
+            <span class="text-emerald-400 font-semibold">0.95 AUC</span>
+          </div>
+          <div class="w-full bg-white/[0.06] h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-emerald-500 to-emerald-300 h-full w-[95%]"></div>
+          </div>
+          <span class="text-[11px] text-neutral-400">
+            Extracción de Feature Importance para políticas preventivas de salud mental.
+          </span>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-3 flex items-center justify-between text-neutral-400 font-mono text-xs border-t border-white/[0.06]">
+        <span class="flex items-center gap-1.5 text-neutral-300">
+          <span class="material-symbols-outlined text-[15px] text-emerald-400">verified</span> 
+          Zero Leakage
+        </span>
+        <span class="text-neutral-400">104 Variables</span>
+      </div>
+    </div>
+  </div>
+</section>

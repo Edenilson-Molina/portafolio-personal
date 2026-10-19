@@ -1,0 +1,92 @@
+---
+// FloatingDock.astro: Translucent glass telemetry dock inspired by Fractal Matter's bottom bar
+---
+
+<div class="fixed bottom-4 left-0 right-0 z-40 px-4 pointer-events-none flex justify-center">
+  <div class="prismatic-dock pointer-events-auto max-w-5xl w-full rounded-2xl p-3 sm:px-6 sm:py-3.5 flex items-center justify-between gap-4 border border-white/[0.12] transition-all duration-300 transform shadow-[0_12px_40px_rgba(0,0,0,0.6)]">
+    
+    <!-- Left: Dock Label -->
+    <div class="hidden sm:flex items-center gap-3 pr-4 border-r border-white/[0.1] shrink-0">
+      <div class="flex flex-col">
+        <span class="font-mono text-[10px] uppercase tracking-widest text-primary-fixed-dim font-bold">
+          TELEMETRY
+        </span>
+        <span class="font-display text-xs font-semibold text-white tracking-tight">
+          CORE DOCK
+        </span>
+      </div>
+    </div>
+
+    <!-- Center: Micro-columns with real telemetry metrics -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 flex-1 min-w-0">
+      <!-- Metric 1: RAG -->
+      <a href="#proyectos" class="flex flex-col min-w-0 group cursor-pointer">
+        <div class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span class="font-display text-xs font-semibold text-white group-hover:text-primary transition-colors truncate">
+            RAG Vector Query
+          </span>
+        </div>
+        <span class="font-mono text-[11px] text-neutral-400 truncate">
+          &lt; 12ms FAISS Lookup
+        </span>
+      </a>
+
+      <!-- Metric 2: Edge AI -->
+      <a href="#proyectos" class="flex flex-col min-w-0 group cursor-pointer">
+        <div class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+          <span class="font-display text-xs font-semibold text-white group-hover:text-secondary transition-colors truncate">
+            Edge INT8 Model
+          </span>
+        </div>
+        <span class="font-mono text-[11px] text-neutral-400 truncate">
+          60ms Latencia Móvil
+        </span>
+      </a>
+
+      <!-- Metric 3: Academic & Status -->
+      <a href="#experiencia" class="hidden sm:flex flex-col min-w-0 group cursor-pointer">
+        <div class="flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+          <span class="font-display text-xs font-semibold text-white group-hover:text-purple-300 transition-colors truncate">
+            Ingeniería Activa
+          </span>
+        </div>
+        <span class="font-mono text-[11px] text-neutral-400 truncate">
+          Sec. Innovación SV
+        </span>
+      </a>
+    </div>
+
+    <!-- Right: Quick Action Pill & Social/Scroll -->
+    <div class="flex items-center gap-2 shrink-0">
+      <a 
+        href="#contacto"
+        class="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/[0.08] hover:bg-white/[0.15] text-white text-xs font-medium border border-white/[0.12] transition-all"
+      >
+        <span class="material-symbols-outlined text-[15px] text-emerald-400">send</span>
+        <span>Contactar</span>
+      </a>
+
+      <!-- Scroll to top button -->
+      <button 
+        id="dockScrollTop"
+        class="w-9 h-9 rounded-xl bg-white/[0.07] hover:bg-white text-white hover:text-neutral-900 border border-white/[0.12] flex items-center justify-center transition-all cursor-pointer shadow-sm"
+        aria-label="Volver arriba"
+        title="Subir al inicio"
+      >
+        <span class="material-symbols-outlined text-[18px]">arrow_upward</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const scrollBtn = document.getElementById('dockScrollTop');
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+</script>

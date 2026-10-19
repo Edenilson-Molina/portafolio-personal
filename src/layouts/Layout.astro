@@ -1,55 +1,73 @@
 ---
 import '../styles/global.css';
-import '@fontsource-variable/onest';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BackgroundShader from '../components/BackgroundShader.astro';
+import FloatingDock from '../components/FloatingDock.astro';
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const { title, description } = Astro.props;
+const { 
+  title = "Elmer Edenilson Rosales Molina // Software & ML Engineer", 
+  description = "Portafolio profesional de Elmer Edenilson Rosales Molina: Software Engineer especializado en Machine Learning, arquitecturas RAG, visión computacional en el edge y sistemas escalables." 
+} = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-	</head>
-	<body class="mx-10 sm:mx-20 md:mx-40 lg:mx-60 xl:mx-80 2xl:mx-96">
-		<div class="absolute inset-0 min-h-screen pointer-events-none z-[-2] bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<div class="absolute inset-0 min-h-screen pointer-events-none z-[-2]">
-			<div class="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[14px_24px] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
-		</div>
-		<Header />
-		<slot />
-	</body>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#08090d" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@400..700&display=swap" 
+      rel="stylesheet" 
+    />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" 
+      rel="stylesheet" 
+    />
+  </head>
+  <body class="bg-[#08090d] font-body-md text-on-surface antialiased selection:bg-white/20 selection:text-white min-h-screen flex flex-col relative overflow-x-hidden pb-16">
+    <!-- Interactive Neural Constellation & Architectural Matrix Background -->
+    <BackgroundShader />
+
+    <!-- Soft Ambient Sheen (Clean & Minimalist) -->
+    <div class="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-[450px] rounded-full bg-indigo-500/[0.04] blur-[150px] z-0" aria-hidden="true"></div>
+
+    <!-- Top Fixed Header -->
+    <Header />
+
+    <!-- Main Content Area -->
+    <main class="w-full pt-20 bg-transparent relative z-10 flex-1">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- Floating Telemetry Dock -->
+    <FloatingDock />
+  </body>
 </html>
-
-<style is:global>
-	:root {
-		color-scheme: light dark;
-	}
-	html {
-		font-family: 'Onest Variable', system-ui, sans-serif;
-		scroll-behavior: smooth;
-	}
-	body {
-		background: #050505;
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		min-height: 100vh;
-	}
-
-	@media (prefers-reduce-motion: reduce) {
-		html {
-			scroll-behavior: auto;
-		}
-	}
-</style>

@@ -1,38 +1,125 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro";
-
-const EXPERIENCE = [
-  {
-    title: "Sistema de Recursos Humanos - Secretaría de Innovación",
-    date: "Actualmente",
-    description: "Colaboro en su desarrollo, implementando nuevas funcionalidades y mejorando la experiencia del usuario. Me dedico a crear interfaces intuitivas y eficientes para optimizar la gestión de recursos humanos.",
-    
-  },
-  {
-    title: "SmartCity Minecraft - Secretaría de Innovación",
-    date: "Julio 2025 - Agosto 2025",
-    description: "Trabajé desde el frontend sobre la actualización del sistema para una personalización avanzada sobre el evento de Minecraft lanzado por el gobierno de El Salvador.",
-   
-  },
-  {
-    title: "Sitio Oficial de la SIP - Secretaría de Innovación",
-    date: "Enero 2025 - Marzo 2025",
-    description: "Colaboré en el desarrollo del nuevo sitio oficial de la Secretaría de Innovación, utilizando tecnologías web modernas.",
-  },
-  {
-    title: "Sistemas internos - Ministerio de Economía",
-    date: "Marzo 2024 - Junio 2024",
-    description: "Participé en el desarrollo de dos módulos clave para los sistemas internos del Ministerio de Economía, mejorando la eficiencia y funcionalidad de las aplicaciones existentes.",
-  },
-];
-
+// Experience.astro: Professional career and verified experience timeline
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700">
-    {
-        EXPERIENCE.map((item) => (
-            <li class="mb-10 ms-4">
-                <ExperienceItem {...item} />
-            </li>
-        ))
-    }
-</ol>
+
+<section class="w-full flex flex-col gap-6" id="experiencia">
+  <div class="flex flex-col gap-1.5">
+    <div class="flex items-center gap-2">
+      <span class="font-mono text-xs uppercase tracking-widest text-primary-fixed-dim font-medium">
+        02 // Trayectoria Profesional
+      </span>
+      <div class="h-px w-10 bg-white/20"></div>
+    </div>
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+      Experiencia Laboral Verificada
+    </h2>
+  </div>
+
+  <div class="flex flex-col gap-6 relative">
+    <!-- Connecting Line -->
+    <div class="absolute left-4 top-4 bottom-4 w-px bg-white/[0.08] hidden md:block"></div>
+
+    <!-- Role 1: Secretaría de Innovación -->
+    <div class="flex flex-col md:flex-row gap-5 items-start">
+      <!-- Timeline Marker -->
+      <div class="hidden md:flex flex-col items-center justify-center w-8 h-8 rounded-full bg-[#181a26] text-primary border border-white/[0.12] shadow-md z-10 shrink-0">
+        <span class="material-symbols-outlined text-[16px]">domain</span>
+      </div>
+
+      <!-- Content Card -->
+      <div class="w-full flex-1 p-6 sm:p-7 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-xl hover:border-white/[0.18] transition-all flex flex-col gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="flex flex-col">
+            <span class="font-display text-lg font-semibold text-white">Secretaría de Innovación de la Presidencia</span>
+            <span class="text-sm font-medium text-primary">Desarrollador de Software</span>
+          </div>
+          <div class="flex flex-col sm:items-end">
+            <span class="font-mono text-xs text-emerald-400 px-2.5 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 self-start sm:self-auto font-medium">
+              08/2024 – Presente
+            </span>
+            <span class="text-xs text-neutral-400 mt-0.5">San Salvador, El Salvador</span>
+          </div>
+        </div>
+
+        <!-- Bullet Points -->
+        <ul class="flex flex-col gap-2.5 text-sm text-neutral-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-primary text-[17px] mt-0.5 shrink-0">check</span>
+            <span>
+              Desarrollo activo de plataformas institucionales para trámites ciudadanos críticos utilizando <strong class="text-white font-medium">Vue.js, TypeScript y Tailwind CSS</strong>, garantizando accesibilidad y alta disponibilidad.
+            </span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-primary text-[17px] mt-0.5 shrink-0">check</span>
+            <span>
+              Implementación de formularios dinámicos y componentes modulares altamente reutilizables con validación estricta de esquemas, reduciendo la tasa de peticiones rechazadas por datos inconsistentes.
+            </span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-primary text-[17px] mt-0.5 shrink-0">check</span>
+            <span>
+              Consumo e integración de APIs RESTful institucionales con manejo asíncrono avanzado, pipelines de caché y control resiliente de excepciones.
+            </span>
+          </li>
+        </ul>
+
+        <!-- Tech Badges Used -->
+        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.06]">
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Vue.js</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">TypeScript</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Tailwind CSS</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">RESTful APIs</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Clean Architecture</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Role 2: Ministerio de Economía -->
+    <div class="flex flex-col md:flex-row gap-5 items-start">
+      <!-- Timeline Marker -->
+      <div class="hidden md:flex flex-col items-center justify-center w-8 h-8 rounded-full bg-[#181a26] text-neutral-400 border border-white/[0.12] shadow-md z-10 shrink-0">
+        <span class="material-symbols-outlined text-[16px]">account_balance</span>
+      </div>
+
+      <!-- Content Card -->
+      <div class="w-full flex-1 p-6 sm:p-7 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-xl hover:border-white/[0.18] transition-all flex flex-col gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="flex flex-col">
+            <span class="font-display text-lg font-semibold text-white">Ministerio de Economía</span>
+            <span class="text-sm font-medium text-secondary">Desarrollador de Software (.NET) – Práctica / Servicio Social</span>
+          </div>
+          <div class="flex flex-col sm:items-end">
+            <span class="font-mono text-xs text-neutral-300 px-2.5 py-0.5 rounded bg-white/[0.05] border border-white/[0.08] self-start sm:self-auto font-medium">
+              2024
+            </span>
+            <span class="text-xs text-neutral-400 mt-0.5">San Salvador, El Salvador</span>
+          </div>
+        </div>
+
+        <!-- Bullet Points -->
+        <ul class="flex flex-col gap-2.5 text-sm text-neutral-300 leading-relaxed">
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-secondary text-[17px] mt-0.5 shrink-0">check</span>
+            <span>
+              Diseño y construcción de módulos internos para la Dirección de Tecnologías de Información bajo <strong class="text-white font-medium">arquitectura por capas en C# (.NET)</strong> y Microsoft SQL Server.
+            </span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-secondary text-[17px] mt-0.5 shrink-0">check</span>
+            <span>
+              Optimización de lógica de negocio en capa de servicios y desarrollo de procedimientos almacenados (Stored Procedures) con indexación avanzada para consultas analíticas veloces.
+            </span>
+          </li>
+        </ul>
+
+        <!-- Tech Badges Used -->
+        <div class="flex flex-wrap gap-1.5 pt-2 border-t border-white/[0.06]">
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">C# (.NET Core)</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">SQL Server</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">Stored Procedures</span>
+          <span class="font-mono text-xs px-2.5 py-0.5 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06]">N-Tier Architecture</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

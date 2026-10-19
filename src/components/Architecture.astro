@@ -1,0 +1,76 @@
+---
+// Architecture.astro: System telemetry and inference architecture pipeline
+---
+
+<section class="w-full rounded-3xl bg-[#12141e]/75 backdrop-blur-xl p-7 sm:p-9 shadow-2xl border border-white/[0.08] flex flex-col gap-6">
+  <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div class="flex flex-col gap-1">
+      <div class="flex items-center gap-2">
+        <span class="font-mono text-xs uppercase tracking-wider text-secondary">Telemetría de Sistema</span>
+        <span class="font-mono text-xs text-neutral-500">// Vectores &amp; Cuantización</span>
+      </div>
+      <h3 class="font-display text-xl sm:text-2xl font-bold text-white tracking-tight">
+        Arquitectura de Procesamiento de Inferencia
+      </h3>
+    </div>
+    <div class="flex items-center gap-2 bg-white/[0.04] px-3.5 py-1.5 rounded-full border border-white/[0.08] shadow-inner">
+      <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-mono text-xs text-neutral-300">Pipeline: Activo</span>
+    </div>
+  </div>
+
+  <!-- Architecture Visual Diagram -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <!-- Stage 1 -->
+    <div class="p-5 rounded-2xl bg-[#0c0d13]/80 border border-white/[0.07] flex flex-col gap-2 hover:border-white/[0.18] transition-all">
+      <div class="flex items-center justify-between font-mono text-xs text-neutral-400">
+        <span class="text-neutral-500">PASO 01</span>
+        <span class="material-symbols-outlined text-primary text-[18px]">input</span>
+      </div>
+      <span class="font-display text-base font-semibold text-white">Ingesta &amp; Chunking</span>
+      <p class="text-xs text-neutral-400 leading-relaxed">
+        Segmentación semántica dinámica de documentos normativos con solapamiento controlado.
+      </p>
+      <span class="mt-2 font-mono text-xs text-primary font-medium">dim: 512 tokens</span>
+    </div>
+
+    <!-- Stage 2 -->
+    <div class="p-5 rounded-2xl bg-[#0c0d13]/80 border border-white/[0.07] flex flex-col gap-2 hover:border-white/[0.18] transition-all">
+      <div class="flex items-center justify-between font-mono text-xs text-neutral-400">
+        <span class="text-neutral-500">PASO 02</span>
+        <span class="material-symbols-outlined text-secondary text-[18px]">transform</span>
+      </div>
+      <span class="font-display text-base font-semibold text-white">Dense Embedding</span>
+      <p class="text-xs text-neutral-400 leading-relaxed">
+        Vectorización con MPNet y adaptaciones fine-tuned con BETO para español técnico y legal.
+      </p>
+      <span class="mt-2 font-mono text-xs text-secondary font-medium">768-D Vector Space</span>
+    </div>
+
+    <!-- Stage 3 -->
+    <div class="p-5 rounded-2xl bg-[#0c0d13]/80 border border-white/[0.07] flex flex-col gap-2 hover:border-white/[0.18] transition-all">
+      <div class="flex items-center justify-between font-mono text-xs text-neutral-400">
+        <span class="text-neutral-500">PASO 03</span>
+        <span class="material-symbols-outlined text-emerald-400 text-[18px]">travel_explore</span>
+      </div>
+      <span class="font-display text-base font-semibold text-white">Búsqueda FAISS</span>
+      <p class="text-xs text-neutral-400 leading-relaxed">
+        Índice HNSW cuantizado con búsqueda de k-vecinos próximos en latencia ultra baja sub-segundo.
+      </p>
+      <span class="mt-2 font-mono text-xs text-emerald-400 font-medium">&lt; 12ms Index query</span>
+    </div>
+
+    <!-- Stage 4 -->
+    <div class="p-5 rounded-2xl bg-[#0c0d13]/80 border border-white/[0.07] flex flex-col gap-2 hover:border-white/[0.18] transition-all">
+      <div class="flex items-center justify-between font-mono text-xs text-neutral-400">
+        <span class="text-neutral-500">PASO 04</span>
+        <span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">verified_user</span>
+      </div>
+      <span class="font-display text-base font-semibold text-white">Validación &amp; Síntesis</span>
+      <p class="text-xs text-neutral-400 leading-relaxed">
+        Cálculo de confianza probabilística, trazabilidad por artículo y generación sin sesgos.
+      </p>
+      <span class="mt-2 font-mono text-xs text-primary-fixed-dim font-medium">Recall@10 = 60%</span>
+    </div>
+  </div>
+</section>

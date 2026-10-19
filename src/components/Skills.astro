@@ -1,0 +1,87 @@
+---
+// Skills.astro: Bento grid showing core competencies across 4 technical domains
+---
+
+<section class="w-full flex flex-col gap-6" id="habilidades">
+  <div class="flex flex-col gap-1.5">
+    <div class="flex items-center gap-2">
+      <span class="font-mono text-xs uppercase tracking-widest text-primary-fixed-dim font-medium">
+        03 // Competencias Principales
+      </span>
+      <div class="h-px w-10 bg-white/20"></div>
+    </div>
+    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+      Habilidades Técnicas Especializadas
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Category 1: IA & Datos -->
+    <div class="p-6 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-lg flex flex-col gap-4 hover:border-white/[0.18] transition-all">
+      <div class="flex items-center gap-2.5">
+        <span class="p-2 rounded-xl bg-white/[0.04] text-primary border border-white/[0.06] material-symbols-outlined text-[22px]">psychology</span>
+        <span class="font-display text-base font-semibold text-white">IA y Datos</span>
+      </div>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Machine Learning</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">RAG Systems</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">FAISS Vector DB</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Sentence Transformers</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">TensorFlow Lite</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Scikit-Learn</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Pandas</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">NumPy</span>
+      </div>
+    </div>
+
+    <!-- Category 2: Estadística & Optimización -->
+    <div class="p-6 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-lg flex flex-col gap-4 hover:border-white/[0.18] transition-all">
+      <div class="flex items-center gap-2.5">
+        <span class="p-2 rounded-xl bg-white/[0.04] text-secondary border border-white/[0.06] material-symbols-outlined text-[22px]">query_stats</span>
+        <span class="font-display text-base font-semibold text-white">Estadística &amp; Benchmarks</span>
+      </div>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Análisis EDA</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Inferencia Estadística</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">ROC-AUC Scoring</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">F1-Score Analysis</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">INT8 Quantization</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">OOD Detection</span>
+      </div>
+    </div>
+
+    <!-- Category 3: Desarrollo de Software -->
+    <div class="p-6 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-lg flex flex-col gap-4 hover:border-white/[0.18] transition-all">
+      <div class="flex items-center gap-2.5">
+        <span class="p-2 rounded-xl bg-white/[0.04] text-emerald-400 border border-white/[0.06] material-symbols-outlined text-[22px]">terminal</span>
+        <span class="font-display text-base font-semibold text-white">Software &amp; Web</span>
+      </div>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Python (FastAPI, Django)</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">TypeScript / JS</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Vue.js</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">React / React Native</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">C# (.NET Core)</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Java (Spring Boot)</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">PostgreSQL</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">SQL Server</span>
+      </div>
+    </div>
+
+    <!-- Category 4: Herramientas & Arquitectura -->
+    <div class="p-6 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-lg flex flex-col gap-4 hover:border-white/[0.18] transition-all">
+      <div class="flex items-center gap-2.5">
+        <span class="p-2 rounded-xl bg-white/[0.04] text-primary-fixed-dim border border-white/[0.06] material-symbols-outlined text-[22px]">architecture</span>
+        <span class="font-display text-base font-semibold text-white">Arquitectura &amp; DevOps</span>
+      </div>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">APIs RESTful</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Docker Contenedores</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Git / GitLab CI</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Clean Architecture</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Linux Environments</span>
+        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Microservicios</span>
+      </div>
+    </div>
+  </div>
+</section>
