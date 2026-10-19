@@ -1,87 +1,439 @@
 ---
-// Skills.astro: Bento grid showing core competencies across 4 technical domains
+// Skills.astro: Bento grid showing core competencies across 4 technical domains with interactive spotlight & tactile reactive pills
 ---
 
-<section class="w-full flex flex-col gap-6" id="habilidades">
+<section class="w-full flex flex-col gap-6 relative" id="habilidades">
+  <!-- Ambient Prismatic Aura behind section -->
+  <div
+    class="absolute -top-10 left-1/2 -translate-x-1/2 w-4/5 h-40 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-emerald-500/5 blur-3xl pointer-events-none -z-10"
+  >
+  </div>
+
+  <!-- Section Header -->
   <div class="flex flex-col gap-1.5">
     <div class="flex items-center gap-2">
-      <span class="font-mono text-xs uppercase tracking-widest text-primary-fixed-dim font-medium">
+      <span
+        class="font-mono text-xs uppercase tracking-widest text-primary-fixed-dim font-medium"
+      >
         03 // Competencias Principales
       </span>
       <div class="h-px w-10 bg-white/20"></div>
     </div>
-    <h2 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+    <h2
+      class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight"
+    >
       Habilidades Técnicas Especializadas
     </h2>
   </div>
 
+  <!-- 4-Card Bento Grid with Dynamic Spotlight -->
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-    <!-- Category 1: IA & Datos -->
-    <div class="p-6 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-lg flex flex-col gap-4 hover:border-white/[0.18] transition-all">
-      <div class="flex items-center gap-2.5">
-        <span class="p-2 rounded-xl bg-white/[0.04] text-primary border border-white/[0.06] material-symbols-outlined text-[22px]">psychology</span>
-        <span class="font-display text-base font-semibold text-white">IA y Datos</span>
+    <!-- Category 1: IA & Datos (Cyan Aura) -->
+    <div
+      class="skill-spotlight-card group relative p-6 sm:p-7 rounded-2xl bg-[#131520]/80 backdrop-blur-xl border border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex flex-col gap-5 hover:border-cyan-500/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+      style="--spotlight-color: rgba(56, 189, 248, 0.14);"
+    >
+      <!-- Top Luminous Edge Highlight -->
+      <div
+        class="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      >
       </div>
-      <div class="flex flex-wrap gap-1.5">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Machine Learning</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">RAG Systems</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">FAISS Vector DB</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Sentence Transformers</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">TensorFlow Lite</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Scikit-Learn</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Pandas</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">NumPy</span>
+
+      <!-- Spotlight Radial Cursor Layer -->
+      <div
+        class="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
+        style="background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--spotlight-color), transparent 70%);"
+      >
+      </div>
+
+      <!-- Category Header -->
+      <div class="relative z-10 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/25 text-cyan-400 flex items-center justify-center shadow-[0_0_15px_rgba(56,189,248,0.15)] group-hover:shadow-[0_0_25px_rgba(56,189,248,0.4)] group-hover:scale-105 transition-all duration-300"
+          >
+            <span class="material-symbols-outlined text-[22px]">psychology</span
+            >
+          </div>
+          <span
+            class="font-display text-base font-semibold text-white group-hover:text-cyan-200 transition-colors"
+          >
+            IA y Datos
+          </span>
+        </div>
+      </div>
+
+      <!-- Skill Pills -->
+      <div class="relative z-10 flex flex-wrap gap-2">
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-cyan-500/[0.12] hover:border-cyan-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(56,189,248,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-400/50 group-hover/pill:bg-cyan-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Machine Learning</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-cyan-500/[0.12] hover:border-cyan-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(56,189,248,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-400/50 group-hover/pill:bg-cyan-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>RAG Systems</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-cyan-500/[0.12] hover:border-cyan-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(56,189,248,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-400/50 group-hover/pill:bg-cyan-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>FAISS Vector DB</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-cyan-500/[0.12] hover:border-cyan-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(56,189,248,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-400/50 group-hover/pill:bg-cyan-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Sentence Transformers</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-cyan-500/[0.12] hover:border-cyan-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(56,189,248,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-400/50 group-hover/pill:bg-cyan-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>TensorFlow Lite</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-cyan-500/[0.12] hover:border-cyan-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(56,189,248,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-400/50 group-hover/pill:bg-cyan-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Scikit-Learn</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-cyan-500/[0.12] hover:border-cyan-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(56,189,248,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-400/50 group-hover/pill:bg-cyan-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Pandas</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-cyan-500/[0.12] hover:border-cyan-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(56,189,248,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-cyan-400/50 group-hover/pill:bg-cyan-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>NumPy</span>
+        </span>
       </div>
     </div>
 
-    <!-- Category 2: Estadística & Optimización -->
-    <div class="p-6 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-lg flex flex-col gap-4 hover:border-white/[0.18] transition-all">
-      <div class="flex items-center gap-2.5">
-        <span class="p-2 rounded-xl bg-white/[0.04] text-secondary border border-white/[0.06] material-symbols-outlined text-[22px]">query_stats</span>
-        <span class="font-display text-base font-semibold text-white">Estadística &amp; Benchmarks</span>
+    <!-- Category 2: Estadística & Optimización (Purple Aura) -->
+    <div
+      class="skill-spotlight-card group relative p-6 sm:p-7 rounded-2xl bg-[#131520]/80 backdrop-blur-xl border border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex flex-col gap-5 hover:border-purple-500/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+      style="--spotlight-color: rgba(168, 85, 247, 0.14);"
+    >
+      <!-- Top Luminous Edge Highlight -->
+      <div
+        class="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-purple-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      >
       </div>
-      <div class="flex flex-wrap gap-1.5">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Análisis EDA</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Inferencia Estadística</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">ROC-AUC Scoring</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">F1-Score Analysis</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">INT8 Quantization</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">OOD Detection</span>
+
+      <!-- Spotlight Radial Cursor Layer -->
+      <div
+        class="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
+        style="background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--spotlight-color), transparent 70%);"
+      >
+      </div>
+
+      <!-- Category Header -->
+      <div class="relative z-10 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/25 text-purple-400 flex items-center justify-center shadow-[0_0_15px_rgba(168,85,247,0.15)] group-hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] group-hover:scale-105 transition-all duration-300"
+          >
+            <span class="material-symbols-outlined text-[22px]"
+              >query_stats</span
+            >
+          </div>
+          <span
+            class="font-display text-base font-semibold text-white group-hover:text-purple-200 transition-colors"
+          >
+            Estadística &amp; Benchmarks
+          </span>
+        </div>
+      </div>
+
+      <!-- Skill Pills -->
+      <div class="relative z-10 flex flex-wrap gap-2">
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-purple-500/[0.12] hover:border-purple-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(168,85,247,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-purple-400/50 group-hover/pill:bg-purple-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Análisis EDA</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-purple-500/[0.12] hover:border-purple-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(168,85,247,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-purple-400/50 group-hover/pill:bg-purple-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Inferencia Estadística</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-purple-500/[0.12] hover:border-purple-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(168,85,247,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-purple-400/50 group-hover/pill:bg-purple-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>ROC-AUC Scoring</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-purple-500/[0.12] hover:border-purple-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(168,85,247,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-purple-400/50 group-hover/pill:bg-purple-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>F1-Score Analysis</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-purple-500/[0.12] hover:border-purple-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(168,85,247,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-purple-400/50 group-hover/pill:bg-purple-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>INT8 Quantization</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-purple-500/[0.12] hover:border-purple-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(168,85,247,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-purple-400/50 group-hover/pill:bg-purple-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>OOD Detection</span>
+        </span>
       </div>
     </div>
 
-    <!-- Category 3: Desarrollo de Software -->
-    <div class="p-6 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-lg flex flex-col gap-4 hover:border-white/[0.18] transition-all">
-      <div class="flex items-center gap-2.5">
-        <span class="p-2 rounded-xl bg-white/[0.04] text-emerald-400 border border-white/[0.06] material-symbols-outlined text-[22px]">terminal</span>
-        <span class="font-display text-base font-semibold text-white">Software &amp; Web</span>
+    <!-- Category 3: Desarrollo de Software (Emerald Aura) -->
+    <div
+      class="skill-spotlight-card group relative p-6 sm:p-7 rounded-2xl bg-[#131520]/80 backdrop-blur-xl border border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex flex-col gap-5 hover:border-emerald-500/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+      style="--spotlight-color: rgba(52, 211, 153, 0.14);"
+    >
+      <!-- Top Luminous Edge Highlight -->
+      <div
+        class="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      >
       </div>
-      <div class="flex flex-wrap gap-1.5">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Python (FastAPI, Django)</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">TypeScript / JS</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Vue.js</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">React / React Native</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">C# (.NET Core)</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Java (Spring Boot)</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">PostgreSQL</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">SQL Server</span>
+
+      <!-- Spotlight Radial Cursor Layer -->
+      <div
+        class="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
+        style="background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--spotlight-color), transparent 70%);"
+      >
+      </div>
+
+      <!-- Category Header -->
+      <div class="relative z-10 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 flex items-center justify-center shadow-[0_0_15px_rgba(52,211,153,0.15)] group-hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] group-hover:scale-105 transition-all duration-300"
+          >
+            <span class="material-symbols-outlined text-[22px]">terminal</span>
+          </div>
+          <span
+            class="font-display text-base font-semibold text-white group-hover:text-emerald-200 transition-colors"
+          >
+            Software &amp; Web
+          </span>
+        </div>
+      </div>
+
+      <!-- Skill Pills -->
+      <div class="relative z-10 flex flex-wrap gap-2">
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-emerald-500/[0.12] hover:border-emerald-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(52,211,153,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400/50 group-hover/pill:bg-emerald-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Python (FastAPI, Django)</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-emerald-500/[0.12] hover:border-emerald-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(52,211,153,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400/50 group-hover/pill:bg-emerald-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>TypeScript / JS</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-emerald-500/[0.12] hover:border-emerald-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(52,211,153,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400/50 group-hover/pill:bg-emerald-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Vue.js</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-emerald-500/[0.12] hover:border-emerald-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(52,211,153,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400/50 group-hover/pill:bg-emerald-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>React / React Native</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-emerald-500/[0.12] hover:border-emerald-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(52,211,153,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400/50 group-hover/pill:bg-emerald-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>C# (.NET Core)</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-emerald-500/[0.12] hover:border-emerald-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(52,211,153,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400/50 group-hover/pill:bg-emerald-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Java (Spring Boot)</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-emerald-500/[0.12] hover:border-emerald-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(52,211,153,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400/50 group-hover/pill:bg-emerald-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>PostgreSQL</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-emerald-500/[0.12] hover:border-emerald-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(52,211,153,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-emerald-400/50 group-hover/pill:bg-emerald-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>SQL Server</span>
+        </span>
       </div>
     </div>
 
-    <!-- Category 4: Herramientas & Arquitectura -->
-    <div class="p-6 rounded-2xl bg-[#13151f]/75 backdrop-blur-xl border border-white/[0.07] shadow-lg flex flex-col gap-4 hover:border-white/[0.18] transition-all">
-      <div class="flex items-center gap-2.5">
-        <span class="p-2 rounded-xl bg-white/[0.04] text-primary-fixed-dim border border-white/[0.06] material-symbols-outlined text-[22px]">architecture</span>
-        <span class="font-display text-base font-semibold text-white">Arquitectura &amp; DevOps</span>
+    <!-- Category 4: Arquitectura & DevOps (Amber Aura) -->
+    <div
+      class="skill-spotlight-card group relative p-6 sm:p-7 rounded-2xl bg-[#131520]/80 backdrop-blur-xl border border-white/[0.08] shadow-[0_10px_30px_rgba(0,0,0,0.4)] flex flex-col gap-5 hover:border-amber-500/30 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+      style="--spotlight-color: rgba(251, 146, 60, 0.14);"
+    >
+      <!-- Top Luminous Edge Highlight -->
+      <div
+        class="absolute top-0 left-6 right-6 h-[1.5px] bg-gradient-to-r from-transparent via-amber-400/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+      >
       </div>
-      <div class="flex flex-wrap gap-1.5">
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">APIs RESTful</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Docker Contenedores</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Git / GitLab CI</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Clean Architecture</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Linux Environments</span>
-        <span class="font-mono text-xs px-2.5 py-1 rounded bg-white/[0.04] text-neutral-300 border border-white/[0.06] hover:text-white transition-colors">Microservicios</span>
+
+      <!-- Spotlight Radial Cursor Layer -->
+      <div
+        class="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"
+        style="background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--spotlight-color), transparent 70%);"
+      >
+      </div>
+
+      <!-- Category Header -->
+      <div class="relative z-10 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-400 flex items-center justify-center shadow-[0_0_15px_rgba(251,146,60,0.15)] group-hover:shadow-[0_0_25px_rgba(251,146,60,0.4)] group-hover:scale-105 transition-all duration-300"
+          >
+            <span class="material-symbols-outlined text-[22px]"
+              >architecture</span
+            >
+          </div>
+          <span
+            class="font-display text-base font-semibold text-white group-hover:text-amber-200 transition-colors"
+          >
+            Arquitectura &amp; DevOps
+          </span>
+        </div>
+      </div>
+
+      <!-- Skill Pills -->
+      <div class="relative z-10 flex flex-wrap gap-2">
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-amber-500/[0.12] hover:border-amber-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(251,146,60,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-amber-400/50 group-hover/pill:bg-amber-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>APIs RESTful</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-amber-500/[0.12] hover:border-amber-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(251,146,60,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-amber-400/50 group-hover/pill:bg-amber-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Docker Contenedores</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-amber-500/[0.12] hover:border-amber-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(251,146,60,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-amber-400/50 group-hover/pill:bg-amber-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Git / GitLab CI</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-amber-500/[0.12] hover:border-amber-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(251,146,60,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-amber-400/50 group-hover/pill:bg-amber-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Clean Architecture</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-amber-500/[0.12] hover:border-amber-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(251,146,60,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-amber-400/50 group-hover/pill:bg-amber-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Linux Environments</span>
+        </span>
+        <span
+          class="group/pill inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1.5 rounded-lg bg-white/[0.03] text-neutral-300 border border-white/[0.07] hover:bg-amber-500/[0.12] hover:border-amber-400/40 hover:text-white hover:shadow-[0_4px_12px_rgba(251,146,60,0.18)] hover:-translate-y-0.5 transition-all duration-200 cursor-default select-none"
+        >
+          <span
+            class="w-1.5 h-1.5 rounded-full bg-amber-400/50 group-hover/pill:bg-amber-400 group-hover/pill:scale-125 transition-all duration-200"
+          ></span>
+          <span>Microservicios</span>
+        </span>
       </div>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  (function () {
+    function initSkillsSpotlight() {
+      var cards = document.querySelectorAll(".skill-spotlight-card");
+      cards.forEach(function (card) {
+        card.addEventListener("pointermove", function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = e.clientX - rect.left;
+          var y = e.clientY - rect.top;
+          card.style.setProperty("--mouse-x", x + "px");
+          card.style.setProperty("--mouse-y", y + "px");
+        });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initSkillsSpotlight);
+    } else {
+      initSkillsSpotlight();
+    }
+  })();
+</script>

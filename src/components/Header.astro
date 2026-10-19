@@ -3,49 +3,91 @@
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[#0e1017]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all">
-  <div class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md">
+<header
+  class="fixed top-0 left-0 right-0 z-50 bg-[#0e1017]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all"
+>
+  <div
+    class="h-20 max-w-7xl mx-auto px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"
+  >
     <!-- Brand & Live Pulse -->
     <div class="flex items-center gap-space-md">
-      <a class="group flex flex-col justify-center focus:outline-none" href="#inicio">
+      <a
+        class="group flex flex-col justify-center focus:outline-none"
+        href="#inicio"
+      >
         <div class="flex items-center gap-2">
-          <span class="font-headline-sm text-[19px] text-white font-semibold tracking-tight group-hover:text-primary-container transition-colors">
-            Elmer Rosales
+          <span
+            class="font-headline-sm text-[19px] text-white font-semibold tracking-tight group-hover:text-primary-container transition-colors"
+          >
+            Edenilson Molina
           </span>
-          <span class="font-mono text-xs text-neutral-400 bg-white/[0.04] px-2 py-0.5 rounded border border-white/[0.06]">
+          <span
+            class="font-mono text-xs text-neutral-400 bg-white/[0.04] px-2 py-0.5 rounded border border-white/[0.06]"
+          >
             ML &amp; Software
           </span>
         </div>
         <div class="flex items-center gap-2 mt-0.5">
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
+            ></span>
           </span>
           <span class="font-mono text-[11px] text-neutral-400 tracking-wide">
-            Disponible para nuevos retos
+            Cuscatlán, El Salvador
           </span>
         </div>
       </a>
     </div>
 
     <!-- Desktop Navigation Links -->
-    <nav class="hidden xl:flex items-center gap-1 bg-[#14161f]/90 p-1.5 rounded-full border border-white/[0.08]" id="navMenu">
-      <a class="nav-link text-sm font-medium px-4 py-1.5 rounded-full bg-white/[0.12] text-white transition-all shadow-sm" data-section="inicio" href="#inicio">
+    <nav
+      class="hidden xl:flex items-center gap-1 bg-[#14161f]/90 p-1.5 rounded-full border border-white/[0.08]"
+      id="navMenu"
+    >
+      <a
+        class="nav-link text-sm font-medium px-4 py-1.5 rounded-full bg-white/[0.12] text-white transition-all shadow-sm"
+        data-section="inicio"
+        href="#inicio"
+      >
         Inicio
       </a>
-      <a class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all" data-section="proyectos" href="#proyectos">
+      <a
+        class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all"
+        data-section="proyectos"
+        href="#proyectos"
+      >
         Proyectos
       </a>
-      <a class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all" data-section="experiencia" href="#experiencia">
+      <a
+        class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all"
+        data-section="experiencia"
+        href="#experiencia"
+      >
         Experiencia
       </a>
-      <a class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all" data-section="habilidades" href="#habilidades">
+      <a
+        class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all"
+        data-section="habilidades"
+        href="#habilidades"
+      >
         Habilidades
       </a>
-      <a class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all" data-section="educacion" href="#educacion">
+      <a
+        class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all"
+        data-section="educacion"
+        href="#educacion"
+      >
         Educación
       </a>
-      <a class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all" data-section="contacto" href="#contacto">
+      <a
+        class="nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-300 hover:text-white hover:bg-white/[0.05] transition-all"
+        data-section="contacto"
+        href="#contacto"
+      >
         Contacto
       </a>
     </nav>
@@ -53,21 +95,21 @@ const baseUrl = import.meta.env.BASE_URL;
     <!-- Actions & Profile Avatar -->
     <div class="flex items-center gap-3">
       <div class="hidden sm:flex items-center gap-1.5">
-        <a 
-          aria-label="GitHub Profile" 
-          class="p-2 rounded-lg bg-white/[0.03] text-neutral-400 hover:text-white hover:bg-white/[0.08] transition-colors flex items-center justify-center border border-white/[0.06]" 
-          href="https://github.com/Edenilson-Molina" 
-          rel="noopener noreferrer" 
+        <a
+          aria-label="GitHub Profile"
+          class="p-2 rounded-lg bg-white/[0.03] text-neutral-400 hover:text-white hover:bg-white/[0.08] transition-colors flex items-center justify-center border border-white/[0.06]"
+          href="https://github.com/Edenilson-Molina"
+          rel="noopener noreferrer"
           target="_blank"
           title="GitHub"
         >
           <span class="material-symbols-outlined text-[19px]">terminal</span>
         </a>
-        <a 
-          aria-label="LinkedIn Profile" 
-          class="p-2 rounded-lg bg-white/[0.03] text-neutral-400 hover:text-white hover:bg-white/[0.08] transition-colors flex items-center justify-center border border-white/[0.06]" 
-          href="https://linkedin.com/in/eermolina" 
-          rel="noopener noreferrer" 
+        <a
+          aria-label="LinkedIn Profile"
+          class="p-2 rounded-lg bg-white/[0.03] text-neutral-400 hover:text-white hover:bg-white/[0.08] transition-colors flex items-center justify-center border border-white/[0.06]"
+          href="https://linkedin.com/in/eermolina"
+          rel="noopener noreferrer"
           target="_blank"
           title="LinkedIn"
         >
@@ -75,29 +117,9 @@ const baseUrl = import.meta.env.BASE_URL;
         </a>
       </div>
 
-      <a 
-        class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white/[0.06] hover:bg-white/[0.1] text-white text-xs font-semibold uppercase tracking-wider border border-white/[0.12] transition-all shadow-sm" 
-        href="mailto:elmeredenilsonrosalesmolina@gmail.com?subject=Solicitud%20de%20CV%20-%20Elmer%20Rosales"
-      >
-        <span class="material-symbols-outlined text-[16px]">download</span>
-        <span>Descargar CV</span>
-      </a>
-
-      <!-- Profile Avatar with soft edge -->
-      <div class="flex items-center pl-1">
-        <div class="p-[1.5px] rounded-full bg-gradient-to-tr from-white/20 to-primary-container/40">
-          <img 
-            alt="Elmer Edenilson Rosales Molina" 
-            class="w-8 h-8 rounded-full object-cover" 
-            src="https://lh3.googleusercontent.com/aida/AEtjO1WiQroEE3z4PzptlkSvV1DP_jtVbXhh3x-kbQea0nPyLSEgioZcKr2pKxcTtkeD1TS1X1eDrd2y5FfhnFMXC02VIjnlNaM8kxDtFXe0pKuA1PpJCwlzLEj7EhXgrM5v3ARIWLIcwvOEkrgvCv_1yB7FZEdbVoH7TcaL_MF6Q-qm36arJCfAcDMiqiAt8V6tjJ7tj1XQkahkMx9MuMwi3ootfl5q-5qGHjZKxe9aTFY6HANfR4s_XToG9YOdddavUueBB_dEf-be"
-            onerror={`this.onerror=null; this.src='${baseUrl}perfil.jpeg';`}
-          />
-        </div>
-      </div>
-
       <!-- Mobile Menu Button -->
-      <button 
-        id="mobileMenuBtn" 
+      <button
+        id="mobileMenuBtn"
         class="xl:hidden p-2 rounded-lg bg-white/[0.04] text-neutral-300 hover:text-white transition-colors flex items-center justify-center border border-white/[0.08]"
         aria-label="Abrir menú"
       >
@@ -107,71 +129,98 @@ const baseUrl = import.meta.env.BASE_URL;
   </div>
 
   <!-- Mobile Drawer -->
-  <div id="mobileDrawer" class="hidden xl:hidden bg-[#0e1017]/98 backdrop-blur-2xl border-b border-white/[0.08] px-margin-mobile py-4 flex-col gap-2">
-    <a class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all" href="#inicio">Inicio</a>
-    <a class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all" href="#proyectos">Proyectos</a>
-    <a class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all" href="#experiencia">Experiencia</a>
-    <a class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all" href="#habilidades">Habilidades</a>
-    <a class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all" href="#educacion">Educación</a>
-    <a class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all" href="#contacto">Contacto</a>
-    <div class="pt-3 border-t border-white/[0.08] flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <a class="p-2 rounded-lg bg-white/[0.05] text-neutral-300" href="https://github.com/Edenilson-Molina" target="_blank" rel="noopener noreferrer">
-          <span class="material-symbols-outlined text-[18px]">terminal</span>
-        </a>
-        <a class="p-2 rounded-lg bg-white/[0.05] text-neutral-300" href="https://linkedin.com/in/eermolina" target="_blank" rel="noopener noreferrer">
-          <span class="material-symbols-outlined text-[18px]">share</span>
-        </a>
-      </div>
-      <a class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/[0.08] text-white text-xs font-semibold" href="mailto:elmeredenilsonrosalesmolina@gmail.com">
-        <span class="material-symbols-outlined text-[15px]">download</span>
-        <span>CV</span>
+  <div
+    id="mobileDrawer"
+    class="hidden xl:hidden bg-[#0e1017]/98 backdrop-blur-2xl border-b border-white/[0.08] px-margin-mobile py-4 flex-col gap-2"
+  >
+    <a
+      class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all"
+      href="#inicio">Inicio</a
+    >
+    <a
+      class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all"
+      href="#proyectos">Proyectos</a
+    >
+    <a
+      class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all"
+      href="#experiencia">Experiencia</a
+    >
+    <a
+      class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all"
+      href="#habilidades">Habilidades</a
+    >
+    <a
+      class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all"
+      href="#educacion">Educación</a
+    >
+    <a
+      class="mobile-link text-sm font-medium px-4 py-2.5 rounded-lg text-neutral-200 hover:bg-white/[0.06] transition-all"
+      href="#contacto">Contacto</a
+    >
+    <div class="pt-3 border-t border-white/[0.08] flex items-center gap-2">
+      <a
+        class="p-2 rounded-lg bg-white/[0.05] text-neutral-300"
+        href="https://github.com/Edenilson-Molina"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="material-symbols-outlined text-[18px]">terminal</span>
+      </a>
+      <a
+        class="p-2 rounded-lg bg-white/[0.05] text-neutral-300"
+        href="https://linkedin.com/in/eermolina"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="material-symbols-outlined text-[18px]">share</span>
       </a>
     </div>
   </div>
 </header>
 
 <script>
-  const btn = document.getElementById('mobileMenuBtn');
-  const drawer = document.getElementById('mobileDrawer');
+  const btn = document.getElementById("mobileMenuBtn");
+  const drawer = document.getElementById("mobileDrawer");
   if (btn && drawer) {
-    btn.addEventListener('click', () => {
-      drawer.classList.toggle('hidden');
-      drawer.classList.toggle('flex');
+    btn.addEventListener("click", () => {
+      drawer.classList.toggle("hidden");
+      drawer.classList.toggle("flex");
     });
 
-    const mobileLinks = drawer.querySelectorAll('.mobile-link');
+    const mobileLinks = drawer.querySelectorAll(".mobile-link");
     mobileLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        drawer.classList.add('hidden');
-        drawer.classList.remove('flex');
+      link.addEventListener("click", () => {
+        drawer.classList.add("hidden");
+        drawer.classList.remove("flex");
       });
     });
   }
 
   // Active section indicator on scroll
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('#navMenu a[data-section]');
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll("#navMenu a[data-section]");
 
   function updateActiveNav() {
-    let current = 'inicio';
+    let current = "inicio";
     const scrollY = window.pageYOffset;
     sections.forEach((sec) => {
       const top = (sec as HTMLElement).offsetTop - 120;
       const height = (sec as HTMLElement).offsetHeight;
       if (scrollY >= top && scrollY < top + height) {
-        current = sec.getAttribute('id') || 'inicio';
+        current = sec.getAttribute("id") || "inicio";
       }
     });
 
     navLinks.forEach((link) => {
-      if (link.getAttribute('data-section') === current) {
-        link.className = 'nav-link text-sm font-medium px-4 py-1.5 rounded-full bg-white/[0.12] text-white transition-all shadow-sm';
+      if (link.getAttribute("data-section") === current) {
+        link.className =
+          "nav-link text-sm font-medium px-4 py-1.5 rounded-full bg-white/[0.12] text-white transition-all shadow-sm";
       } else {
-        link.className = 'nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-white hover:bg-white/[0.05] transition-all';
+        link.className =
+          "nav-link text-sm font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-white hover:bg-white/[0.05] transition-all";
       }
     });
   }
 
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
 </script>

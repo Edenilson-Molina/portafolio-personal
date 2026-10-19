@@ -5,109 +5,155 @@ const baseUrl = import.meta.env.BASE_URL;
 
 <section class="w-full pt-8 lg:pt-14 flex flex-col gap-10 relative" id="inicio">
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-    
     <!-- Left Column: Identity & Bio (7 cols) -->
     <div class="lg:col-span-7 flex flex-col gap-6">
-      
       <!-- Live Status Pill -->
-      <div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-white/[0.04] backdrop-blur-xl border border-white/[0.09] shadow-sm">
+      <div
+        class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-white/[0.04] backdrop-blur-xl border border-white/[0.09] shadow-sm"
+      >
         <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"
+          ></span>
         </span>
         <span class="font-mono text-xs text-neutral-300 tracking-wide">
-          Fractal Neural Systems &bull; Listo para despliegue
+          Remoto / Híbrido
         </span>
       </div>
 
       <!-- Main Name & Title -->
       <div class="flex flex-col gap-2">
-        <span class="font-mono text-xs uppercase tracking-widest text-primary-fixed-dim font-medium">
+        <span
+          class="font-mono text-xs uppercase tracking-widest text-primary-fixed-dim font-medium"
+        >
           Machine Learning &bull; Software Engineering &bull; 2026
         </span>
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08]">
+        <h1
+          class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.08]"
+        >
           Elmer Edenilson <br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#dcfdff] to-primary-container">
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#dcfdff] to-primary-container"
+          >
             Rosales Molina
           </span>
         </h1>
-        
+
         <div class="mt-2 flex items-center flex-wrap gap-2 text-sm">
-          <span class="px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-neutral-200 font-medium">
+          <span
+            class="px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-neutral-200 font-medium"
+          >
             Software Engineer
           </span>
           <span class="text-neutral-500 font-mono text-xs">//</span>
-          <span class="px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-secondary font-medium">
+          <span
+            class="px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-secondary font-medium"
+          >
             Machine Learning &amp; Process Automation
           </span>
         </div>
       </div>
 
       <!-- Abstract Bio -->
-      <p class="font-body-lg text-neutral-300 max-w-2xl text-[17px] leading-relaxed">
-        Egresado de <strong class="text-white font-medium">Ingeniería de Sistemas Informáticos</strong> (Universidad de El Salvador) especializado en Inteligencia Artificial aplicada, arquitecturas <span class="text-secondary font-medium">RAG</span>, Visión Computacional en el Edge y microservicios escalables de alto rendimiento para el sector público y privado.
+      <p
+        class="font-body-lg text-neutral-300 max-w-2xl text-[17px] leading-relaxed"
+      >
+        Egresado de <strong class="text-white font-medium"
+          >Ingeniería de Sistemas Informáticos</strong
+        > en la <span class="text-cyan-400">Universidad de El Salvador</span>,
+        especializado en Inteligencia Artificial aplicada y automatización de
+        proceso, construyendo software de calidad para resolver problemas del
+        mundo real.
       </p>
 
       <!-- Tactile White Pill CTAs -->
       <div class="flex flex-wrap items-center gap-3.5 pt-2">
-        <a 
-          class="btn-tactile-white inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold tracking-wide" 
+        <a
+          class="btn-tactile-white inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold tracking-wide"
           href="#proyectos"
         >
           <span>Explorar Proyectos</span>
-          <span class="material-symbols-outlined text-[19px]">arrow_forward</span>
+          <span class="material-symbols-outlined text-[19px]"
+            >arrow_forward</span
+          >
         </a>
-        <a 
-          class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-white font-medium text-sm border border-white/[0.1] hover:-translate-y-0.5 backdrop-blur-md transition-all shadow-sm" 
+        <a
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-white font-medium text-sm border border-white/[0.1] hover:-translate-y-0.5 backdrop-blur-md transition-all shadow-sm"
           href="#contacto"
         >
-          <span class="material-symbols-outlined text-[19px] text-cyan-400">forum</span>
+          <span class="material-symbols-outlined text-[19px] text-cyan-400"
+            >forum</span
+          >
           <span>Contactar Directo</span>
         </a>
-        <a 
-          class="inline-flex items-center gap-1.5 px-4 py-3 rounded-full bg-white/[0.03] hover:bg-white/[0.07] text-neutral-300 hover:text-white font-medium text-sm border border-white/[0.06] transition-all" 
-          href="mailto:elmeredenilsonrosalesmolina@gmail.com?subject=Solicitud%20de%20CV%20-%20Elmer%20Rosales"
+        <!-- View CV in new tab/window -->
+        <a
+          id="heroViewCvBtn"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/[0.04] hover:bg-white/[0.09] text-neutral-200 hover:text-white font-medium text-sm border border-white/[0.08] hover:border-white/[0.2] hover:-translate-y-0.5 transition-all shadow-sm group"
+          href={`${baseUrl}edenilson-ues-cv.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Abrir Curriculum Vitae en una nueva pestaña"
         >
-          <span class="material-symbols-outlined text-[18px]">article</span>
-          <span>Descargar CV</span>
+          <span
+            class="material-symbols-outlined text-[19px] text-cyan-400 group-hover:scale-110 transition-transform"
+            >description</span
+          >
+          <span>Ver CV</span>
+          <span
+            class="material-symbols-outlined text-[15px] text-neutral-400 group-hover:text-cyan-400 group-hover:translate-x-0.5 transition-all"
+            >open_in_new</span
+          >
         </a>
-      </div>
-
-      <!-- Micro Terminal Metadata Banner -->
-      <div class="rounded-2xl bg-[#0c0e14]/90 backdrop-blur-md p-3.5 px-4 flex flex-wrap items-center justify-between gap-2 border border-white/[0.07] shadow-inner max-w-xl">
-        <div class="flex items-center gap-2 font-mono text-xs text-neutral-400">
-          <span class="material-symbols-outlined text-cyan-400 text-[16px]">terminal</span>
-          <span class="truncate">elmer@neural:~$ infer-benchmark --model bert-qa --quant int8</span>
-        </div>
-        <span class="font-mono text-[11px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded font-medium">
-          0.06s Latency
-        </span>
       </div>
     </div>
 
     <!-- Right Column: Centered Circular Portrait with Orbit (5 cols) -->
-    <div class="lg:col-span-5 flex flex-col items-center justify-center relative py-6">
-      
+    <div
+      class="lg:col-span-5 flex flex-col items-center justify-center relative py-6"
+    >
       <!-- Ambient Prismatic Caustic Halo -->
-      <div class="absolute w-80 h-80 rounded-full bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-rose-500/10 blur-3xl pointer-events-none"></div>
+      <div
+        class="absolute w-80 h-80 rounded-full bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-rose-500/10 blur-3xl pointer-events-none"
+      >
+      </div>
 
       <!-- Centered Portrait Stage (Dedicated container perfectly concentric with orbit) -->
-      <div class="relative w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] flex items-center justify-center">
-        
+      <div
+        class="relative w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] flex items-center justify-center"
+      >
         <!-- SVG Neural Orbit with Glowing Light Comet (Centered exactly around the photo) -->
-        <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
-          <div class="w-full h-full rounded-full animate-orbit-spin flex items-center justify-center">
+        <div
+          class="absolute inset-0 pointer-events-none flex items-center justify-center"
+        >
+          <div
+            class="w-full h-full rounded-full animate-orbit-spin flex items-center justify-center"
+          >
             <svg class="w-full h-full" viewBox="0 0 400 400" fill="none">
               <!-- Dashed concentric orbit path -->
-              <circle cx="200" cy="200" r="185" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-dasharray="6 8"/>
+              <circle
+                cx="200"
+                cy="200"
+                r="185"
+                stroke="rgba(255,255,255,0.08)"
+                stroke-width="1.5"
+                stroke-dasharray="6 8"></circle>
               <!-- Glowing Comet Particle -->
-              <circle cx="200" cy="15" r="4.5" fill="#38bdf8" filter="url(#glow)"/>
+              <circle
+                cx="200"
+                cy="15"
+                r="4.5"
+                fill="#38bdf8"
+                filter="url(#glow)"></circle>
               <defs>
                 <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="3.5" result="coloredBlur"
+                  ></feGaussianBlur>
                   <feMerge>
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
+                    <feMergeNode in="coloredBlur"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
                   </feMerge>
                 </filter>
               </defs>
@@ -116,12 +162,16 @@ const baseUrl = import.meta.env.BASE_URL;
         </div>
 
         <!-- Circular Portrait Frame (Clean, stable, perfectly centered, no movement/glare on hover) -->
-        <div class="relative p-2 rounded-full bg-[#12141f]/85 backdrop-blur-2xl border border-white/[0.14] shadow-[0_20px_50px_rgba(0,0,0,0.65)] z-10 flex items-center justify-center">
+        <div
+          class="relative p-2 rounded-full bg-[#12141f]/85 backdrop-blur-2xl border border-white/[0.14] shadow-[0_20px_50px_rgba(0,0,0,0.65)] z-10 flex items-center justify-center"
+        >
           <!-- Perfectly sized circular image container with natural framing -->
-          <div class="relative overflow-hidden rounded-full bg-[#0c0d12] w-56 h-56 sm:w-68 sm:h-68">
-            <img 
-              alt="Elmer Edenilson Rosales Molina" 
-              class="w-full h-full object-cover object-[center_20%] filter contrast-[1.02]" 
+          <div
+            class="relative overflow-hidden rounded-full bg-[#0c0d12] w-56 h-56 sm:w-68 sm:h-68"
+          >
+            <img
+              alt="Elmer Edenilson Rosales Molina"
+              class="w-full h-full object-cover object-[center_20%] filter contrast-[1.02]"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxfO8gEMMphq9o8STm__n29Rt7hhfmyxenqJoyAHn7sVcGK3oXX20AysLQsIdJvFsvP22QBXkNU57sT7jyjVyHpzbUaR7vtw4nn07UDrfH6VNAILEPS6ABKMuUD7gWLMbKgm-UiGoPgW_PxIEackyS3NILNEfLHL8rGoV51woGbWoUbF8VF8thJg9NQV2ywzcMOU5GCTyHoIT3SgP0V_G2YZNsr6ExCTSWOlKBF4pv7Lr_oSNjTcdRQzjpNOvl1d"
               onerror={`this.onerror=null; this.src='${baseUrl}perfil.jpeg';`}
             />
@@ -130,26 +180,41 @@ const baseUrl = import.meta.env.BASE_URL;
       </div>
 
       <!-- Clean Availability Pill Centered Below Circle -->
-      <div class="mt-4 px-4 py-2 rounded-full bg-[#141622]/90 backdrop-blur-2xl border border-white/[0.10] shadow-lg flex items-center gap-2.5 z-10">
+      <div
+        class="mt-4 px-4 py-2 rounded-full bg-[#141622]/90 backdrop-blur-2xl border border-white/[0.10] shadow-lg flex items-center gap-2.5 z-10"
+      >
         <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"
+          ></span>
         </span>
-        <span class="text-xs font-semibold text-white tracking-tight">Disponible para proyectos</span>
+        <span class="text-xs font-semibold text-white tracking-tight"
+          >Disponible</span
+        >
         <span class="text-neutral-500 text-xs font-mono">&bull;</span>
-        <span class="font-mono text-[11px] text-cyan-400 font-medium">El Salvador</span>
+        <span class="font-mono text-[11px] text-cyan-400 font-medium"
+          >El Salvador</span
+        >
       </div>
 
       <!-- Bottom Specs Indicator -->
-      <div class="mt-3 flex items-center gap-3 text-neutral-400 font-mono text-xs z-10">
+      <div
+        class="mt-3 flex items-center gap-3 text-neutral-400 font-mono text-xs z-10"
+      >
         <div class="flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-[15px] text-cyan-400">memory</span>
-          <span>Edge AI &bull; RAG</span>
+          <span class="material-symbols-outlined text-[15px] text-cyan-400"
+            >memory</span
+          >
+          <span>ML &bull; AI</span>
         </div>
         <span class="text-neutral-600">/</span>
         <div class="flex items-center gap-1.5">
-          <span class="material-symbols-outlined text-[15px] text-purple-400">school</span>
-          <span>UES Alumni</span>
+          <span class="material-symbols-outlined text-[15px] text-purple-400"
+            >school</span
+          >
+          <span>UES</span>
         </div>
       </div>
     </div>

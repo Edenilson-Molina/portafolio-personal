@@ -1,5 +1,5 @@
 ---
-// Contact.astro: Canales directos de conexión profesional
+// Contact.astro: Canales directos de conexión profesional protegidos
 ---
 
 <section class="w-full flex flex-col gap-6" id="contacto">
@@ -37,7 +37,11 @@
     <!-- 4 Direct Channels in a clean responsive grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
       <!-- Email -->
-      <a class="flex flex-col justify-between p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.06] hover:border-white/[0.18] transition-all group" href="mailto:elmeredenilsonrosalesmolina@gmail.com">
+      <a 
+        class="flex flex-col justify-between p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.06] hover:border-white/[0.18] transition-all group" 
+        href="mailto:elmeredenilsonrosalesmolina@gmail.com"
+        title="Enviar correo"
+      >
         <div class="flex items-center justify-between mb-3">
           <span class="p-2 rounded-xl bg-white/[0.04] text-primary border border-white/[0.06] material-symbols-outlined text-[20px]">email</span>
           <span class="material-symbols-outlined text-neutral-500 group-hover:text-white transition-colors text-[18px]">arrow_outward</span>
@@ -50,22 +54,34 @@
         </div>
       </a>
 
-      <!-- Phone / WhatsApp -->
-      <a class="flex flex-col justify-between p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.06] hover:border-white/[0.18] transition-all group" href="tel:+50370289034">
+      <!-- WhatsApp Directo (Protegido contra scraping) -->
+      <a 
+        class="flex flex-col justify-between p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.06] hover:border-white/[0.18] transition-all group" 
+        href="https://wa.me/50370289034?text=Hola%20Elmer,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20una%20oportunidad"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Abrir WhatsApp"
+      >
         <div class="flex items-center justify-between mb-3">
-          <span class="p-2 rounded-xl bg-white/[0.04] text-emerald-400 border border-white/[0.06] material-symbols-outlined text-[20px]">call</span>
+          <span class="p-2 rounded-xl bg-white/[0.04] text-emerald-400 border border-white/[0.06] material-symbols-outlined text-[20px]">chat</span>
           <span class="material-symbols-outlined text-neutral-500 group-hover:text-white transition-colors text-[18px]">arrow_outward</span>
         </div>
         <div class="flex flex-col min-w-0">
-          <span class="text-[11px] font-mono text-neutral-400">Teléfono / WhatsApp</span>
+          <span class="text-[11px] font-mono text-neutral-400">WhatsApp Profesional</span>
           <span class="text-xs text-neutral-200 font-mono group-hover:text-white transition-colors mt-0.5">
-            +503 7028 9034
+            Iniciar chat directo &bull; +503
           </span>
         </div>
       </a>
 
       <!-- LinkedIn -->
-      <a class="flex flex-col justify-between p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.06] hover:border-white/[0.18] transition-all group" href="https://linkedin.com/in/eermolina" rel="noopener noreferrer" target="_blank">
+      <a 
+        class="flex flex-col justify-between p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.06] hover:border-white/[0.18] transition-all group" 
+        href="https://linkedin.com/in/eermolina" 
+        rel="noopener noreferrer" 
+        target="_blank"
+        title="Ver LinkedIn"
+      >
         <div class="flex items-center justify-between mb-3">
           <span class="p-2 rounded-xl bg-white/[0.04] text-secondary border border-white/[0.06] material-symbols-outlined text-[20px]">work</span>
           <span class="material-symbols-outlined text-neutral-500 group-hover:text-white transition-colors text-[18px]">arrow_outward</span>
@@ -79,7 +95,13 @@
       </a>
 
       <!-- GitHub -->
-      <a class="flex flex-col justify-between p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.06] hover:border-white/[0.18] transition-all group" href="https://github.com/Edenilson-Molina" rel="noopener noreferrer" target="_blank">
+      <a 
+        class="flex flex-col justify-between p-4 rounded-2xl bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.06] hover:border-white/[0.18] transition-all group" 
+        href="https://github.com/Edenilson-Molina" 
+        rel="noopener noreferrer" 
+        target="_blank"
+        title="Ver GitHub"
+      >
         <div class="flex items-center justify-between mb-3">
           <span class="p-2 rounded-xl bg-white/[0.04] text-neutral-300 border border-white/[0.06] material-symbols-outlined text-[20px]">terminal</span>
           <span class="material-symbols-outlined text-neutral-500 group-hover:text-white transition-colors text-[18px]">arrow_outward</span>
