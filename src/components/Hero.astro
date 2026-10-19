@@ -1,5 +1,5 @@
 ---
-// Hero.astro: Ethereal 3D Prismatic Hero with tactile buttons and geometric crystal balance
+// Hero.astro: Centered Circular Portrait with Clean Neural Orbit (Static & Stable)
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
@@ -9,7 +9,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <!-- Left Column: Identity & Bio (7 cols) -->
     <div class="lg:col-span-7 flex flex-col gap-6">
       
-      <!-- Live Telemetry Status Pill -->
+      <!-- Live Status Pill -->
       <div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-white/[0.04] backdrop-blur-xl border border-white/[0.09] shadow-sm">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -33,11 +33,11 @@ const baseUrl = import.meta.env.BASE_URL;
         </h1>
         
         <div class="mt-2 flex items-center flex-wrap gap-2 text-sm">
-          <span class="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-neutral-200 font-medium">
+          <span class="px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-neutral-200 font-medium">
             Software Engineer
           </span>
           <span class="text-neutral-500 font-mono text-xs">//</span>
-          <span class="px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-secondary font-medium">
+          <span class="px-3.5 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-secondary font-medium">
             Machine Learning &amp; Process Automation
           </span>
         </div>
@@ -48,7 +48,7 @@ const baseUrl = import.meta.env.BASE_URL;
         Egresado de <strong class="text-white font-medium">Ingeniería de Sistemas Informáticos</strong> (Universidad de El Salvador) especializado en Inteligencia Artificial aplicada, arquitecturas <span class="text-secondary font-medium">RAG</span>, Visión Computacional en el Edge y microservicios escalables de alto rendimiento para el sector público y privado.
       </p>
 
-      <!-- Tactile White Pill CTAs (Inspired by Fractal Matter "Discover Now") -->
+      <!-- Tactile White Pill CTAs -->
       <div class="flex flex-wrap items-center gap-3.5 pt-2">
         <a 
           class="btn-tactile-white inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-semibold tracking-wide" 
@@ -79,55 +79,69 @@ const baseUrl = import.meta.env.BASE_URL;
           <span class="material-symbols-outlined text-cyan-400 text-[16px]">terminal</span>
           <span class="truncate">elmer@neural:~$ infer-benchmark --model bert-qa --quant int8</span>
         </div>
-        <span class="font-mono text-[11px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded font-medium">
+        <span class="font-mono text-[11px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded font-medium">
           0.06s Latency
         </span>
       </div>
     </div>
 
-    <!-- Right Column: Crystal Prismatic Capsule & Portrait (5 cols) -->
-    <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+    <!-- Right Column: Centered Circular Portrait with Orbit (5 cols) -->
+    <div class="lg:col-span-5 flex flex-col items-center justify-center relative py-6">
       
       <!-- Ambient Prismatic Caustic Halo -->
-      <div class="absolute w-80 h-80 rounded-full bg-gradient-to-tr from-cyan-500/20 via-purple-500/15 to-rose-500/15 blur-3xl pointer-events-none"></div>
+      <div class="absolute w-80 h-80 rounded-full bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-rose-500/10 blur-3xl pointer-events-none"></div>
 
-      <!-- Orbital Graphic Ring -->
-      <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
-        <div class="w-88 h-88 rounded-full border border-white/[0.08] border-dashed animate-[spin_60s_linear_infinite]"></div>
-      </div>
+      <!-- Centered Portrait Stage (Dedicated container perfectly concentric with orbit) -->
+      <div class="relative w-[340px] h-[340px] sm:w-[380px] sm:h-[380px] flex items-center justify-center">
+        
+        <!-- SVG Neural Orbit with Glowing Light Comet (Centered exactly around the photo) -->
+        <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+          <div class="w-full h-full rounded-full animate-orbit-spin flex items-center justify-center">
+            <svg class="w-full h-full" viewBox="0 0 400 400" fill="none">
+              <!-- Dashed concentric orbit path -->
+              <circle cx="200" cy="200" r="185" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-dasharray="6 8"/>
+              <!-- Glowing Comet Particle -->
+              <circle cx="200" cy="15" r="4.5" fill="#38bdf8" filter="url(#glow)"/>
+              <defs>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        </div>
 
-      <!-- Crystal Portrait Frame -->
-      <div class="relative p-2.5 rounded-[32px] bg-[#12141e]/80 backdrop-blur-2xl border border-white/[0.12] shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-        <div class="relative overflow-hidden rounded-[24px] bg-[#0c0d12] w-72 sm:w-80 aspect-[4/5] group">
-          <img 
-            alt="Elmer Edenilson Rosales Molina" 
-            class="w-full h-full object-cover object-center filter contrast-[1.03] group-hover:scale-105 transition-transform duration-700" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxfO8gEMMphq9o8STm__n29Rt7hhfmyxenqJoyAHn7sVcGK3oXX20AysLQsIdJvFsvP22QBXkNU57sT7jyjVyHpzbUaR7vtw4nn07UDrfH6VNAILEPS6ABKMuUD7gWLMbKgm-UiGoPgW_PxIEackyS3NILNEfLHL8rGoV51woGbWoUbF8VF8thJg9NQV2ywzcMOU5GCTyHoIT3SgP0V_G2YZNsr6ExCTSWOlKBF4pv7Lr_oSNjTcdRQzjpNOvl1d"
-            onerror={`this.onerror=null; this.src='${baseUrl}perfil.jpeg';`}
-          />
-          
-          <!-- Subtle vignette overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0e1017] via-transparent to-transparent opacity-65 pointer-events-none"></div>
-
-          <!-- Prismatic Floating Badge -->
-          <div class="absolute bottom-3 left-3 right-3 p-3 rounded-2xl bg-[#141620]/90 backdrop-blur-2xl border border-white/[0.1] shadow-xl flex items-center justify-between gap-2">
-            <div class="flex items-center gap-2.5">
-              <span class="relative flex h-2.5 w-2.5">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-              </span>
-              <div class="flex flex-col">
-                <span class="text-xs font-semibold text-white tracking-tight">Disponible para proyectos</span>
-                <span class="font-mono text-[10px] text-neutral-400">Ingeniería &bull; Research &bull; SV</span>
-              </div>
-            </div>
-            <span class="material-symbols-outlined text-cyan-400 text-[20px]">verified</span>
+        <!-- Circular Portrait Frame (Clean, stable, perfectly centered, no movement/glare on hover) -->
+        <div class="relative p-2 rounded-full bg-[#12141f]/85 backdrop-blur-2xl border border-white/[0.14] shadow-[0_20px_50px_rgba(0,0,0,0.65)] z-10 flex items-center justify-center">
+          <!-- Perfectly sized circular image container with natural framing -->
+          <div class="relative overflow-hidden rounded-full bg-[#0c0d12] w-56 h-56 sm:w-68 sm:h-68">
+            <img 
+              alt="Elmer Edenilson Rosales Molina" 
+              class="w-full h-full object-cover object-[center_20%] filter contrast-[1.02]" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkqxfO8gEMMphq9o8STm__n29Rt7hhfmyxenqJoyAHn7sVcGK3oXX20AysLQsIdJvFsvP22QBXkNU57sT7jyjVyHpzbUaR7vtw4nn07UDrfH6VNAILEPS6ABKMuUD7gWLMbKgm-UiGoPgW_PxIEackyS3NILNEfLHL8rGoV51woGbWoUbF8VF8thJg9NQV2ywzcMOU5GCTyHoIT3SgP0V_G2YZNsr6ExCTSWOlKBF4pv7Lr_oSNjTcdRQzjpNOvl1d"
+              onerror={`this.onerror=null; this.src='${baseUrl}perfil.jpeg';`}
+            />
           </div>
         </div>
       </div>
 
+      <!-- Clean Availability Pill Centered Below Circle -->
+      <div class="mt-4 px-4 py-2 rounded-full bg-[#141622]/90 backdrop-blur-2xl border border-white/[0.10] shadow-lg flex items-center gap-2.5 z-10">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="text-xs font-semibold text-white tracking-tight">Disponible para proyectos</span>
+        <span class="text-neutral-500 text-xs font-mono">&bull;</span>
+        <span class="font-mono text-[11px] text-cyan-400 font-medium">El Salvador</span>
+      </div>
+
       <!-- Bottom Specs Indicator -->
-      <div class="mt-4 flex items-center gap-3 text-neutral-400 font-mono text-xs">
+      <div class="mt-3 flex items-center gap-3 text-neutral-400 font-mono text-xs z-10">
         <div class="flex items-center gap-1.5">
           <span class="material-symbols-outlined text-[15px] text-cyan-400">memory</span>
           <span>Edge AI &bull; RAG</span>

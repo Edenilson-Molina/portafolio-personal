@@ -44,7 +44,7 @@
   --color-on-tertiary-fixed: #002113;
   --color-on-tertiary-fixed-variant: #005236;
 
-  --color-background: #0b0c10;
+  --color-background: #08090d;
   --color-on-background: #e3e1e9;
   --color-error: #ffb4ab;
   --color-on-error: #690005;
@@ -162,12 +162,57 @@
   .perspective-1000 {
     perspective: 1000px;
   }
+
+  .hologram-card {
+    transform-style: preserve-3d;
+    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(-1deg);
+  }
+}
+
+@keyframes floatDelayed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatDelayed 7.5s ease-in-out infinite 1.2s;
+}
+
+.animate-orbit-spin {
+  animation: orbitSpin 35s linear infinite;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #0b0c10;
+  background-color: #08090d;
   color: #e3e1e9;
 }
 
